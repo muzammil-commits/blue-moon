@@ -31,11 +31,11 @@ export const ServicesIndexPage: React.FC<ServicesIndexPageProps> = ({ onOpenQuot
   };
 
   return (
-    <main className="font-sans">
+    <main className="font-sans relative z-10">
       {/* Hero */}
-      <section className="bg-gradient-to-b from-[#EEF4FF] via-[#F5F8FF] to-white py-16 sm:py-24 relative overflow-hidden">
+      <section className="py-16 sm:py-24 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 text-center">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-[#0866F5] text-xs sm:text-sm font-bold uppercase tracking-wider mb-4">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-blue-100/90 text-[#0866F5] text-xs sm:text-sm font-bold uppercase tracking-wider mb-4 shadow-sm backdrop-blur-sm">
             End-to-End Capabilities
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight max-w-4xl mx-auto leading-tight">
@@ -51,14 +51,12 @@ export const ServicesIndexPage: React.FC<ServicesIndexPageProps> = ({ onOpenQuot
       </section>
 
       {/* Services List with detailed cards & images */}
-      <section className="py-16 bg-white">
+      <section className="py-12 sm:py-16 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
           {SERVICES_DATA.map((srv, idx) => (
             <div
               key={srv.id}
-              className={`grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-6 sm:p-10 rounded-3xl border border-slate-100 hover:border-blue-200 shadow-md hover:shadow-2xl transition-all duration-300 ${
-                idx % 2 === 1 ? 'bg-[#F8FAFF]' : 'bg-white'
-              }`}
+              className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-6 sm:p-10 rounded-3xl border border-slate-200/80 hover:border-blue-300 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/90 backdrop-blur-md"
             >
               {/* Image side */}
               <div className={`lg:col-span-5 ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>

@@ -56,11 +56,11 @@ export const ContactPage: React.FC = () => {
   )}`;
 
   return (
-    <main className="font-sans">
+    <main className="font-sans relative z-10">
       {/* Hero */}
-      <section className="bg-gradient-to-b from-[#EEF4FF] via-[#F5F8FF] to-white py-16 sm:py-24 text-center relative overflow-hidden">
+      <section className="py-16 sm:py-24 text-center relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-[#0866F5] text-xs sm:text-sm font-bold uppercase tracking-wider mb-4">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-blue-100/90 text-[#0866F5] text-xs sm:text-sm font-bold uppercase tracking-wider mb-4 shadow-sm backdrop-blur-sm">
             Connect With Our Team
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight max-w-4xl mx-auto leading-tight">
@@ -76,7 +76,7 @@ export const ContactPage: React.FC = () => {
       </section>
 
       {/* Contact Content & Form */}
-      <section className="py-16 bg-white">
+      <section className="py-12 sm:py-16 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             
@@ -96,7 +96,7 @@ export const ContactPage: React.FC = () => {
                 {/* Phone */}
                 <a
                   href={`tel:${COMPANY_INFO.phoneClean}`}
-                  className="p-5 rounded-2xl bg-[#F8FAFF] border border-[#E2E8F8] hover:border-blue-300 transition-all flex items-start gap-4 group"
+                  className="p-5 rounded-2xl bg-white/90 backdrop-blur-md border border-slate-200/80 hover:border-blue-400 shadow-md transition-all flex items-start gap-4 group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-blue-100/80 text-[#0866F5] flex items-center justify-center flex-shrink-0 group-hover:bg-[#0866F5] group-hover:text-white transition-colors">
                     <Phone className="w-5 h-5" />
@@ -113,7 +113,7 @@ export const ContactPage: React.FC = () => {
                 {/* Email */}
                 <a
                   href={`mailto:${COMPANY_INFO.email}`}
-                  className="p-5 rounded-2xl bg-[#F8FAFF] border border-[#E2E8F8] hover:border-blue-300 transition-all flex items-start gap-4 group"
+                  className="p-5 rounded-2xl bg-white/90 backdrop-blur-md border border-slate-200/80 hover:border-blue-400 shadow-md transition-all flex items-start gap-4 group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-indigo-100/80 text-indigo-600 flex items-center justify-center flex-shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
                     <Mail className="w-5 h-5" />
@@ -128,7 +128,7 @@ export const ContactPage: React.FC = () => {
                 </a>
 
                 {/* Address */}
-                <div className="p-5 rounded-2xl bg-[#F8FAFF] border border-[#E2E8F8] flex items-start gap-4">
+                <div className="p-5 rounded-2xl bg-white/90 backdrop-blur-md border border-slate-200/80 shadow-md flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-cyan-100/80 text-[#087EFF] flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
@@ -155,7 +155,7 @@ export const ContactPage: React.FC = () => {
 
             {/* Right Form Column */}
             <div className="lg:col-span-7">
-              <div className="bg-[#F8FAFF] rounded-3xl p-6 sm:p-10 border border-[#E2E8F8] shadow-lg">
+              <div className="bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-xl">
                 <div className="mb-6">
                   <h3 className="text-2xl font-extrabold text-slate-900">
                     Send Us an Inquiry
@@ -301,7 +301,7 @@ export const ContactPage: React.FC = () => {
       </section>
 
       {/* Google Maps Location Embed */}
-      <section className="py-12 bg-[#F5F8FF] border-t border-slate-200/60">
+      <section className="py-12 relative z-10 border-t border-slate-200/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="text-center mb-8">
             <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">Locate Us</span>

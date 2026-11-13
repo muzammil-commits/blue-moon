@@ -10,15 +10,15 @@
   }
 
   body {
-    background-color: #F5F8FF;
+    background-color: #EDF3FF;
     color: #1e293b;
     overflow-x: hidden;
   }
 }
 
 /* 
-  Full Website Animated Background (image copy 20.png)
-  Animated, glowing, professional and seamless
+  Full Website Animated Continuous Background (image copy 20.png)
+  Flows seamlessly through all sections up to the footer
 */
 .site-animated-bg {
   position: fixed;
@@ -27,7 +27,7 @@
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-  opacity: 0.16;
+  opacity: 0.32;
   pointer-events: none;
   z-index: 0;
   animation: siteBgFloat 22s ease-in-out infinite alternate;
@@ -36,16 +36,36 @@
 @keyframes siteBgFloat {
   0% {
     transform: scale(1) translateY(0);
-    filter: brightness(1) saturate(1);
-  }
-  50% {
-    transform: scale(1.03) translateY(-12px);
-    filter: brightness(1.12) saturate(1.1);
-  }
-  100% {
-    transform: scale(1.06) translateY(-20px);
     filter: brightness(1.05) saturate(1.05);
   }
+  50% {
+    transform: scale(1.04) translateY(-14px);
+    filter: brightness(1.18) saturate(1.15);
+  }
+  100% {
+    transform: scale(1.07) translateY(-22px);
+    filter: brightness(1.1) saturate(1.1);
+  }
+}
+
+/* Infinite horizontal marquee animation for testimonials right-to-left */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 32s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
 
 /* Custom gradient text utility */
@@ -57,11 +77,19 @@
 
 /* Glow effects */
 .glow-blue {
-  box-shadow: 0 0 25px rgba(8, 102, 245, 0.35);
+  box-shadow: 0 0 30px rgba(8, 102, 245, 0.4);
 }
 
 .glow-purple {
-  box-shadow: 0 0 25px rgba(121, 54, 242, 0.35);
+  box-shadow: 0 0 30px rgba(121, 54, 242, 0.4);
+}
+
+/* Glass Card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(226, 232, 248, 0.9);
 }
 
 /* Smooth scrollbar styling */

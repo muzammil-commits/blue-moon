@@ -10,11 +10,11 @@ interface TestimonialsPageProps {
 
 export const TestimonialsPage: React.FC<TestimonialsPageProps> = ({ onOpenQuote }) => {
   return (
-    <main className="font-sans">
+    <main className="font-sans relative z-10">
       {/* 1. Hero */}
-      <section className="bg-gradient-to-b from-[#EEF4FF] via-[#F5F8FF] to-white py-16 sm:py-24 text-center relative overflow-hidden">
+      <section className="py-16 sm:py-24 text-center relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-[#0866F5] text-xs sm:text-sm font-bold uppercase tracking-wider mb-4">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-blue-100/90 text-[#0866F5] text-xs sm:text-sm font-bold uppercase tracking-wider mb-4 shadow-sm backdrop-blur-sm">
             Client Feedback & Trust
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight max-w-4xl mx-auto leading-tight">
@@ -30,14 +30,14 @@ export const TestimonialsPage: React.FC<TestimonialsPageProps> = ({ onOpenQuote 
       </section>
 
       {/* 2. Testimonials Grid */}
-      <section className="py-16 bg-white">
+      <section className="py-12 sm:py-16 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {TESTIMONIALS_DATA.map((item) => (
               <div
                 key={item.id}
-                className="bg-[#F8FAFF] rounded-3xl p-8 border border-[#E2E8F8] shadow-sm hover:shadow-2xl hover:border-blue-400 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white/90 backdrop-blur-md rounded-3xl p-8 border border-slate-200/80 shadow-md hover:shadow-2xl hover:border-blue-400 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">

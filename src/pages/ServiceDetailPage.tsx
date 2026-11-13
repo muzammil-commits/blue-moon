@@ -29,9 +29,9 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onOpenQuot
   )}`;
 
   return (
-    <main className="font-sans">
+    <main className="font-sans relative z-10">
       {/* 1. Hero Banner */}
-      <section className="bg-gradient-to-b from-[#EEF4FF] via-[#F5F8FF] to-white pt-10 pb-14 sm:py-16 relative overflow-hidden">
+      <section className="pt-10 pb-14 sm:py-16 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
           
@@ -116,10 +116,10 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onOpenQuot
       </section>
 
       {/* 2. Key Benefits */}
-      <section className="py-16 sm:py-20 bg-white">
+      <section className="py-16 sm:py-20 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-wider">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-100/90 text-[#0866F5] text-xs font-bold uppercase tracking-wider shadow-sm">
               Strategic Advantages
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -134,7 +134,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onOpenQuot
             {service.benefits.map((b, idx) => (
               <div
                 key={idx}
-                className="bg-[#F8FAFF] rounded-3xl p-6 sm:p-7 border border-[#E2E8F8] hover:border-blue-400 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+                className="bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-7 border border-slate-200/80 hover:border-blue-400 shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-2xl bg-blue-100/80 text-[#0866F5] flex items-center justify-center font-bold text-sm mb-4">
                   <CheckCircle2 className="w-5 h-5" />
@@ -148,10 +148,10 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onOpenQuot
       </section>
 
       {/* 3. Features & Capabilities */}
-      <section className="py-16 sm:py-20 bg-[#F5F8FF]">
+      <section className="py-16 sm:py-20 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-[#0866F5] text-xs font-bold uppercase tracking-wider">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-100/90 text-[#0866F5] text-xs font-bold uppercase tracking-wider shadow-sm">
               Technical Capabilities
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -163,7 +163,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onOpenQuot
             {service.features.map((feat, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm flex items-start gap-3 hover:shadow-xl hover:-translate-y-1 hover:border-blue-300 transition-all duration-300 group"
+                className="bg-white/90 backdrop-blur-md rounded-2xl p-5 border border-slate-200/80 shadow-md flex items-start gap-3 hover:shadow-xl hover:-translate-y-1 hover:border-blue-400 transition-all duration-300 group"
               >
                 <div className="w-8 h-8 rounded-xl bg-blue-50 group-hover:bg-[#0866F5] text-blue-600 group-hover:text-white flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors">
                   <Zap className="w-4 h-4" />
@@ -175,7 +175,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onOpenQuot
 
           {/* Deliverables / Tech stack pills */}
           {service.technologies && (
-            <div className="mt-12 bg-white rounded-2xl p-6 border border-slate-100 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="mt-12 bg-white/90 backdrop-blur-md rounded-2xl p-6 border border-slate-200/80 shadow-md flex flex-col sm:flex-row items-center justify-between gap-4">
               <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
                 Technologies & Tools We Utilize:
               </span>
@@ -183,7 +183,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onOpenQuot
                 {service.technologies.map((tech, tIdx) => (
                   <span
                     key={tIdx}
-                    className="px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200/80 text-slate-700 text-xs font-semibold hover:bg-blue-50 hover:text-blue-600 hover:border-blue-300 transition-all"
+                    className="px-3.5 py-1.5 rounded-full bg-slate-50/90 border border-slate-200/80 text-slate-700 text-xs font-semibold hover:bg-blue-50 hover:text-blue-600 hover:border-blue-300 transition-all"
                   >
                     {tech}
                   </span>
@@ -195,10 +195,10 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onOpenQuot
       </section>
 
       {/* 4. Our Working Process (Steps 1 to 4) */}
-      <section className="py-16 sm:py-20 bg-white">
+      <section className="py-16 sm:py-20 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-wider">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-100/90 text-blue-600 text-xs font-bold uppercase tracking-wider shadow-sm">
               Methodology
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -213,7 +213,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onOpenQuot
             {service.process.map((step, idx) => (
               <div
                 key={idx}
-                className="bg-[#F8FAFF] rounded-3xl p-6 border border-[#E2E8F8] relative group hover:border-blue-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="bg-white/90 backdrop-blur-md rounded-3xl p-6 border border-slate-200/80 relative group hover:border-blue-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="text-4xl font-black text-blue-600/25 group-hover:text-blue-600 transition-colors mb-3">
                   {step.step}
@@ -227,10 +227,10 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onOpenQuot
       </section>
 
       {/* 5. FAQs Accordion */}
-      <section className="py-16 sm:py-20 bg-[#F5F8FF]">
+      <section className="py-16 sm:py-20 relative z-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-8">
           <div className="text-center mb-12 space-y-2">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-[#0866F5] text-xs font-bold uppercase tracking-wider">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-[#0866F5] text-xs font-bold uppercase tracking-wider shadow-sm">
               Got Questions?
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -244,7 +244,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onOpenQuot
               return (
                 <div
                   key={idx}
-                  className="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm transition-all"
+                  className="bg-white/90 backdrop-blur-md rounded-2xl border border-slate-200/80 overflow-hidden shadow-md transition-all"
                 >
                   <button
                     onClick={() => setOpenFaq(isOpen ? null : idx)}
@@ -271,7 +271,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onOpenQuot
       </section>
 
       {/* 6. Related Services */}
-      <section className="py-16 bg-white">
+      <section className="py-16 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="flex items-center justify-between mb-8">
             <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900">
@@ -291,7 +291,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onOpenQuot
               <Link
                 key={rel.id}
                 to={`/services/${rel.slug}`}
-                className="bg-[#F8FAFF] rounded-2xl p-5 border border-[#E2E8F8] hover:border-blue-300 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between"
+                className="bg-white/90 backdrop-blur-md rounded-2xl p-5 border border-slate-200/80 hover:border-blue-300 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between"
               >
                 <div>
                   <h4 className="font-bold text-slate-900 group-hover:text-blue-600 mb-1 transition-colors">

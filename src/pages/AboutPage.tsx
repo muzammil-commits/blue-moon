@@ -13,12 +13,12 @@ interface AboutPageProps {
 
 export const AboutPage: React.FC<AboutPageProps> = ({ onOpenQuote }) => {
   return (
-    <main className="font-sans">
+    <main className="font-sans relative z-10">
       {/* 1. Hero Banner */}
-      <section className="bg-gradient-to-b from-[#EEF4FF] via-[#F5F8FF] to-white py-16 sm:py-24 relative overflow-hidden">
+      <section className="py-16 sm:py-24 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 text-center">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-[#0866F5] text-xs sm:text-sm font-bold uppercase tracking-wider mb-4">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-blue-100/90 text-[#0866F5] text-xs sm:text-sm font-bold uppercase tracking-wider mb-4 shadow-sm backdrop-blur-sm">
             About {COMPANY_INFO.name}
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight max-w-4xl mx-auto leading-tight">
@@ -34,13 +34,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenQuote }) => {
       </section>
 
       {/* 2. Company Introduction & Office Visual */}
-      <section className="py-16 bg-white">
+      <section className="py-16 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Visual */}
             <div className="lg:col-span-6 relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-50">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/80">
                 <img
                   src="/assets/about-office.png"
                   alt="BlueMoon Software Solutions Office"
@@ -57,7 +57,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenQuote }) => {
 
             {/* Intro Text */}
             <div className="lg:col-span-6 space-y-6">
-              <div className="inline-block px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase">
+              <div className="inline-block px-3 py-1 rounded-full bg-blue-100/80 text-blue-700 text-xs font-bold uppercase shadow-sm">
                 Our Story & Expertise
               </div>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -72,13 +72,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenQuote }) => {
 
               {/* Achievements Grid with CountUp */}
               <div className="grid grid-cols-2 gap-4 pt-2">
-                <div className="p-4 rounded-2xl bg-blue-50/70 border border-blue-100">
+                <div className="p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-blue-200/80 shadow-md">
                   <div className="text-3xl font-black text-blue-600">
                     <CountUp end={325} suffix="+" duration={2000} />
                   </div>
                   <div className="text-xs font-bold text-slate-700 mt-0.5">Projects Delivered</div>
                 </div>
-                <div className="p-4 rounded-2xl bg-purple-50/70 border border-purple-100">
+                <div className="p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-purple-200/80 shadow-md">
                   <div className="text-3xl font-black text-purple-600">
                     <CountUp end={100} suffix="%" duration={1800} />
                   </div>
@@ -92,10 +92,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenQuote }) => {
       </section>
 
       {/* 3. Vision & Mission */}
-      <section id="vision" className="py-20 bg-[#F5F8FF]">
+      <section id="vision" className="py-20 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-[#0866F5] text-xs font-bold uppercase tracking-wider">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-100/90 text-[#0866F5] text-xs font-bold uppercase tracking-wider shadow-sm">
               Guiding Principles
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -105,7 +105,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenQuote }) => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Vision */}
-            <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-lg border border-slate-100 relative group hover:border-blue-300 transition-all">
+            <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 sm:p-10 shadow-lg border border-slate-200/80 relative group hover:border-blue-400 transition-all">
               <div className="w-16 h-16 rounded-2xl bg-blue-50 text-[#0866F5] flex items-center justify-center mb-6">
                 <Rocket className="w-8 h-8" />
               </div>
@@ -116,7 +116,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenQuote }) => {
             </div>
 
             {/* Mission */}
-            <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-lg border border-slate-100 relative group hover:border-purple-300 transition-all">
+            <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 sm:p-10 shadow-lg border border-slate-200/80 relative group hover:border-purple-400 transition-all">
               <div className="w-16 h-16 rounded-2xl bg-purple-50 text-[#7936F2] flex items-center justify-center mb-6">
                 <Target className="w-8 h-8" />
               </div>
@@ -130,10 +130,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenQuote }) => {
       </section>
 
       {/* 4. Core Values */}
-      <section id="values" className="py-20 bg-white">
+      <section id="values" className="py-20 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-wider">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-100/90 text-blue-600 text-xs font-bold uppercase tracking-wider shadow-sm">
               The BlueMoon Standard
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -148,7 +148,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenQuote }) => {
             {COMPANY_INFO.coreValues.map((val, idx) => (
               <div
                 key={idx}
-                className="bg-[#F8FAFF] rounded-2xl p-6 border border-[#E2E8F8] hover:border-blue-300 shadow-sm hover:shadow-lg transition-all"
+                className="bg-white/90 backdrop-blur-md rounded-2xl p-6 border border-slate-200/80 hover:border-blue-300 shadow-md hover:shadow-xl transition-all"
               >
                 <div className="w-10 h-10 rounded-xl bg-blue-100/80 text-[#0866F5] flex items-center justify-center mb-4 font-bold text-sm">
                   0{idx + 1}
@@ -162,10 +162,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenQuote }) => {
       </section>
 
       {/* 5. Why Choose BlueMoon */}
-      <section className="py-20 bg-[#F5F8FF]">
+      <section className="py-20 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-[#0866F5] text-xs font-bold uppercase tracking-wider">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-[#0866F5] text-xs font-bold uppercase tracking-wider shadow-sm">
               Competitive Edge
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -180,8 +180,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenQuote }) => {
               { icon: <Globe className="w-6 h-6 text-cyan-600" />, title: 'Full Spectrum Services', desc: 'Everything from UI/UX design and cloud servers to SEO, Google Ads, and mobile apps.' },
               { icon: <HeartHandshake className="w-6 h-6 text-purple-600" />, title: 'Dedicated Support', desc: 'Transparent weekly updates, direct WhatsApp channels, and 24/7 technical monitoring.' },
             ].map((feature, idx) => (
-              <div key={idx} className="bg-white rounded-3xl p-6 shadow-md border border-slate-100 hover:shadow-xl transition-all">
-                <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center mb-4">
+              <div key={idx} className="bg-white/90 backdrop-blur-md rounded-3xl p-6 shadow-md border border-slate-200/80 hover:shadow-xl transition-all">
+                <div className="w-12 h-12 rounded-2xl bg-blue-50/80 flex items-center justify-center mb-4">
                   {feature.icon}
                 </div>
                 <h3 className="text-base font-bold text-slate-900 mb-2">{feature.title}</h3>
