@@ -208,3 +208,4 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenQuote }) => {
     </main>
   );
 };
+

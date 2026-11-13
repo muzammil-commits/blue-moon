@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
               <img
                 src="/assets/logo-dark.png"
                 alt="BlueMoon Software Solutions"
-                className="h-10 sm:h-12 w-auto object-contain"
+                className="h-12 sm:h-14 md:h-16 w-auto object-contain filter drop-shadow"
                 onError={(e) => {
                   const target = e.currentTarget;
                   target.style.display = 'none';
@@ -28,12 +28,12 @@ export const Footer: React.FC = () => {
                 }}
               />
               <div className="hidden items-center gap-2">
-                <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-blue-500 to-purple-600 flex items-center justify-center text-white font-black text-lg">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-500 to-purple-600 flex items-center justify-center text-white font-black text-xl">
                   B
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-extrabold text-xl text-white tracking-tight">Blue<span className="text-purple-400">Moon</span></span>
-                  <span className="text-[9px] font-bold text-slate-400 tracking-wider">SOFTWARE SOLUTIONS</span>
+                  <span className="font-extrabold text-2xl text-white tracking-tight">Blue<span className="text-purple-400">Moon</span></span>
+                  <span className="text-[10px] font-bold text-slate-400 tracking-wider">SOFTWARE SOLUTIONS</span>
                 </div>
               </div>
             </Link>
@@ -154,7 +154,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link to="/services" className="text-blue-400 hover:text-blue-300 font-semibold flex items-center gap-1.5 transition-colors group">
-                  <ChevronRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                  <ChevronRight className="w-3.5 h-3.5 text-blue-500 transition-transform group-hover:translate-x-1" />
                   <span>& More (All 12 Services)...</span>
                 </Link>
               </li>

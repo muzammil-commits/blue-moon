@@ -141,3 +141,4 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onOpenQuote }) => 
     </main>
   );
 };
+

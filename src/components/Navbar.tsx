@@ -3,8 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { 
   Phone, Mail, MapPin, ChevronDown, Menu, X, ArrowRight,
   Monitor, Code2, Search, Megaphone, Share2, PlaySquare,
-  BadgePercent, Palette, MapPin as LocationIcon, Smartphone,
-  Server, GraduationCap, Facebook, Linkedin, Youtube, ExternalLink
+  BadgePercent, Palette, Smartphone,
+  Server, GraduationCap, Facebook, Linkedin, Youtube
 } from 'lucide-react';
 import { COMPANY_INFO } from '../data/company';
 import { SERVICES_DATA } from '../data/services';
@@ -46,7 +46,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
     'ai-ad-creation': <PlaySquare className="w-4 h-4 text-violet-500" />,
     'google-ads-management': <BadgePercent className="w-4 h-4 text-amber-500" />,
     'graphic-designing': <Palette className="w-4 h-4 text-rose-500" />,
-    'google-business-profile-management': <LocationIcon className="w-4 h-4 text-sky-500" />,
+    'google-business-profile-management': <MapPin className="w-4 h-4 text-sky-500" />,
     'mobile-app-development': <Smartphone className="w-4 h-4 text-blue-700" />,
     'web-hosting-domain-registration': <Server className="w-4 h-4 text-teal-500" />,
     'training-internship': <GraduationCap className="w-4 h-4 text-purple-600" />
@@ -127,19 +127,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
         </div>
       </div>
 
-      {/* 2. Main Navigation Bar */}
-      <nav className={`bg-white/95 backdrop-blur-md transition-all duration-300 border-b border-slate-100 ${
-        isScrolled ? 'py-2.5 shadow-md' : 'py-3.5'
+      {/* 2. Main Navigation Bar with Enlarged, Clean Transparent Logo */}
+      <nav className={`bg-white transition-all duration-300 border-b border-slate-100 ${
+        isScrolled ? 'py-2 shadow-md' : 'py-3'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group focus:outline-none">
+          
+          {/* Logo (Increased size & Zero patchwork background) */}
+          <Link to="/" className="flex items-center group focus:outline-none">
             <img 
               src="/assets/logo-light.png" 
               alt="BlueMoon Software Solutions" 
-              className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-102"
+              className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-transform group-hover:scale-102 filter drop-shadow-sm"
               onError={(e) => {
-                // High-fidelity fallback
                 const target = e.currentTarget;
                 target.style.display = 'none';
                 const fallback = target.nextElementSibling as HTMLElement;
@@ -147,12 +147,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
               }}
             />
             <div className="hidden items-center gap-2">
-              <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 flex items-center justify-center text-white font-bold text-lg shadow-md">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 flex items-center justify-center text-white font-black text-xl shadow-md">
                 B
               </div>
               <div className="flex flex-col">
-                <span className="font-extrabold text-xl text-blue-600 leading-none tracking-tight">Blue<span className="text-purple-600">Moon</span></span>
-                <span className="text-[9px] font-bold text-slate-700 tracking-wider">SOFTWARE SOLUTIONS</span>
+                <span className="font-extrabold text-2xl text-blue-600 leading-none tracking-tight">Blue<span className="text-purple-600">Moon</span></span>
+                <span className="text-[10px] font-bold text-slate-700 tracking-wider">SOFTWARE SOLUTIONS</span>
               </div>
             </div>
           </Link>
@@ -459,4 +459,3 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
     </header>
   );
 };
-

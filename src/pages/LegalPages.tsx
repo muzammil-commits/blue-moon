@@ -75,3 +75,4 @@ export const TermsPage: React.FC = () => {
     </main>
   );
 };
+

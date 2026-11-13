@@ -128,3 +128,4 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ onOpenQuote }) => {
     </main>
   );
 };
+

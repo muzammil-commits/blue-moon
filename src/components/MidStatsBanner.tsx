@@ -1,5 +1,6 @@
 import React from 'react';
 import { Trophy, Box, Smile, Globe, ArrowRight } from 'lucide-react';
+import { CountUp } from './CountUp';
 
 interface MidStatsBannerProps {
   onGetStarted: () => void;
@@ -20,7 +21,9 @@ export const MidStatsBanner: React.FC<MidStatsBannerProps> = ({ onGetStarted }) 
               <Trophy className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-300" />
             </div>
             <div>
-              <div className="text-xl sm:text-2xl font-black leading-none">12+</div>
+              <div className="text-xl sm:text-2xl font-black leading-none">
+                <CountUp end={12} suffix="+" duration={1600} />
+              </div>
               <div className="text-xs text-blue-100 font-medium mt-1">Years Experience</div>
             </div>
           </div>
@@ -31,7 +34,9 @@ export const MidStatsBanner: React.FC<MidStatsBannerProps> = ({ onGetStarted }) 
               <Box className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-300" />
             </div>
             <div>
-              <div className="text-xl sm:text-2xl font-black leading-none">325+</div>
+              <div className="text-xl sm:text-2xl font-black leading-none">
+                <CountUp end={325} suffix="+" duration={2000} />
+              </div>
               <div className="text-xs text-blue-100 font-medium mt-1">Projects Delivered</div>
             </div>
           </div>
@@ -42,7 +47,9 @@ export const MidStatsBanner: React.FC<MidStatsBannerProps> = ({ onGetStarted }) 
               <Smile className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-300" />
             </div>
             <div>
-              <div className="text-xl sm:text-2xl font-black leading-none">100%</div>
+              <div className="text-xl sm:text-2xl font-black leading-none">
+                <CountUp end={100} suffix="%" duration={1800} />
+              </div>
               <div className="text-xs text-blue-100 font-medium mt-1">Client Satisfaction</div>
             </div>
           </div>

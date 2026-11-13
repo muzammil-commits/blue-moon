@@ -5,6 +5,7 @@ import { Footer } from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
 import { QuoteModal } from './components/QuoteModal';
 import { VideoModal } from './components/VideoModal';
+import { QuickConsultationBadge } from './components/QuickConsultationBadge';
 
 // Pages
 import { HomePage } from './pages/HomePage';
@@ -38,7 +39,6 @@ export const App: React.FC = () => {
               element={
                 <HomePage 
                   onOpenQuote={() => setIsQuoteOpen(true)} 
-                  onWatchIntro={() => setIsVideoOpen(true)} 
                 />
               } 
             />
@@ -96,8 +96,9 @@ export const App: React.FC = () => {
         {/* Global Footer */}
         <Footer />
 
-        {/* Floating WhatsApp Action Button */}
+        {/* Interactive Floating Badges */}
         <WhatsAppButton />
+        <QuickConsultationBadge onOpenQuote={() => setIsQuoteOpen(true)} />
 
         {/* Interactive Modals */}
         <QuoteModal 

@@ -120,3 +120,4 @@ export const BlogIndexPage: React.FC = () => {
     </main>
   );
 };
+

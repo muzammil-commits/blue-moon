@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { 
   ArrowRight, CheckCircle2, ChevronDown, ChevronUp,
-  Phone, MessageSquare, ShieldCheck, Zap, Award, Sparkles,
-  HelpCircle, ArrowLeft
+  MessageSquare, Zap, Sparkles, Phone
 } from 'lucide-react';
 import { SERVICES_DATA } from '../data/services';
 import { COMPANY_INFO } from '../data/company';
@@ -32,7 +31,8 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onOpenQuot
   return (
     <main className="font-sans">
       {/* 1. Hero Banner */}
-      <section className="bg-gradient-to-b from-[#EEF4FF] via-[#F5F8FF] to-white pt-12 pb-16 sm:py-20 relative overflow-hidden">
+      <section className="bg-gradient-to-b from-[#EEF4FF] via-[#F5F8FF] to-white pt-10 pb-14 sm:py-16 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
           
           {/* Breadcrumbs */}
@@ -102,7 +102,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onOpenQuot
                 <img
                   src={service.heroImage}
                   alt={service.title}
-                  className="w-full h-80 sm:h-96 object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-80 sm:h-96 object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-950/50 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-md px-4 py-2 rounded-2xl text-xs font-bold text-slate-900 shadow-md">
@@ -134,9 +134,9 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onOpenQuot
             {service.benefits.map((b, idx) => (
               <div
                 key={idx}
-                className="bg-[#F8FAFF] rounded-2xl p-6 sm:p-7 border border-[#E2E8F8] hover:border-blue-300 shadow-sm hover:shadow-lg transition-all"
+                className="bg-[#F8FAFF] rounded-3xl p-6 sm:p-7 border border-[#E2E8F8] hover:border-blue-400 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="w-10 h-10 rounded-xl bg-blue-100/80 text-[#0866F5] flex items-center justify-center font-bold text-sm mb-4">
+                <div className="w-10 h-10 rounded-2xl bg-blue-100/80 text-[#0866F5] flex items-center justify-center font-bold text-sm mb-4">
                   <CheckCircle2 className="w-5 h-5" />
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-2">{b.title}</h3>
@@ -163,12 +163,12 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onOpenQuot
             {service.features.map((feat, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm flex items-start gap-3 hover:shadow-md transition-shadow"
+                className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm flex items-start gap-3 hover:shadow-xl hover:-translate-y-1 hover:border-blue-300 transition-all duration-300 group"
               >
-                <div className="w-7 h-7 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-xl bg-blue-50 group-hover:bg-[#0866F5] text-blue-600 group-hover:text-white flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors">
                   <Zap className="w-4 h-4" />
                 </div>
-                <span className="text-sm font-bold text-slate-800 leading-snug">{feat}</span>
+                <span className="text-sm font-bold text-slate-800 leading-snug group-hover:text-blue-600 transition-colors">{feat}</span>
               </div>
             ))}
           </div>
@@ -183,7 +183,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onOpenQuot
                 {service.technologies.map((tech, tIdx) => (
                   <span
                     key={tIdx}
-                    className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold"
+                    className="px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200/80 text-slate-700 text-xs font-semibold hover:bg-blue-50 hover:text-blue-600 hover:border-blue-300 transition-all"
                   >
                     {tech}
                   </span>
@@ -213,9 +213,9 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onOpenQuot
             {service.process.map((step, idx) => (
               <div
                 key={idx}
-                className="bg-[#F8FAFF] rounded-3xl p-6 border border-[#E2E8F8] relative group hover:border-blue-300 transition-all"
+                className="bg-[#F8FAFF] rounded-3xl p-6 border border-[#E2E8F8] relative group hover:border-blue-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="text-3xl font-black text-blue-600/30 group-hover:text-blue-600 transition-colors mb-3">
+                <div className="text-4xl font-black text-blue-600/25 group-hover:text-blue-600 transition-colors mb-3">
                   {step.step}
                 </div>
                 <h3 className="text-base font-bold text-slate-900 mb-2">{step.title}</h3>
@@ -291,7 +291,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onOpenQuot
               <Link
                 key={rel.id}
                 to={`/services/${rel.slug}`}
-                className="bg-[#F8FAFF] rounded-2xl p-5 border border-[#E2E8F8] hover:border-blue-300 shadow-sm hover:shadow-xl transition-all group flex flex-col justify-between"
+                className="bg-[#F8FAFF] rounded-2xl p-5 border border-[#E2E8F8] hover:border-blue-300 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between"
               >
                 <div>
                   <h4 className="font-bold text-slate-900 group-hover:text-blue-600 mb-1 transition-colors">

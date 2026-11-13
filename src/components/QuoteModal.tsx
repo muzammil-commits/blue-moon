@@ -232,3 +232,4 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose, default
     </div>
   );
 };
+
