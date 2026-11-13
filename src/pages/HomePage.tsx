@@ -2,9 +2,11 @@ import React from 'react';
 import { Hero } from '../components/Hero';
 import { StatsBar } from '../components/StatsBar';
 import { ServicesGrid } from '../components/ServicesGrid';
+import { ProcessSection } from '../components/ProcessSection';
 import { AboutSection } from '../components/AboutSection';
 import { MidStatsBanner } from '../components/MidStatsBanner';
 import { TestimonialsSlider } from '../components/TestimonialsSlider';
+import { HomeFaqSection } from '../components/HomeFaqSection';
 import { CtaBanner } from '../components/CtaBanner';
 
 interface HomePageProps {
@@ -20,8 +22,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenQuote }) => {
   };
 
   return (
-    <main>
-      {/* 1. Hero Section with Background image & Free Consultation button */}
+    <main className="relative">
+      {/* 1. Hero Section with Background image & Consultation button */}
       <Hero 
         onOpenConsultation={onOpenQuote}
         onExploreServices={scrollToServices}
@@ -30,19 +32,25 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenQuote }) => {
       {/* 2. Top Stats Bar with Animated Count-Up Numbers */}
       <StatsBar />
 
-      {/* 3. Services Grid (All 12 Services with Hover Effects & Direct Links) */}
+      {/* 3. Services Grid (All 12 Services with Exact Thumbnail Visuals) */}
       <ServicesGrid />
 
-      {/* 4. About Us Section with Office Image & Values */}
+      {/* 4. Strategic 4-Step Process & Methodology Fold */}
+      <ProcessSection onOpenQuote={onOpenQuote} />
+
+      {/* 5. About Us Section with Office Image & Guiding Values */}
       <AboutSection />
 
-      {/* 5. Mid Stats Ribbon with Count-Up Numbers */}
+      {/* 6. Mid Stats Ribbon with Count-Up Numbers */}
       <MidStatsBanner onGetStarted={onOpenQuote} />
 
-      {/* 6. Testimonials Slider */}
+      {/* 7. Client Testimonials Carousel */}
       <TestimonialsSlider />
 
-      {/* 7. Ready To Grow CTA Banner */}
+      {/* 8. Frequently Asked Questions Fold */}
+      <HomeFaqSection onOpenQuote={onOpenQuote} />
+
+      {/* 9. Ready To Grow Skyline CTA Banner */}
       <CtaBanner />
     </main>
   );

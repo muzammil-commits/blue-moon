@@ -10,7 +10,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     iconName: 'Monitor',
     gradient: 'from-blue-600 to-indigo-600',
     bgBadge: 'bg-blue-50 text-blue-600',
-    heroImage: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/assets/services/website-designing.png',
     benefits: [
       { title: 'Mobile-First Responsive Layouts', description: 'Flawless display across smartphones, tablets, laptops, and ultra-wide 4K monitors.' },
       { title: 'Enhanced User Engagement', description: 'Thoughtfully structured information hierarchy that turns casual visitors into paying customers.' },
@@ -53,7 +53,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     iconName: 'Code2',
     gradient: 'from-blue-700 to-purple-600',
     bgBadge: 'bg-indigo-50 text-indigo-600',
-    heroImage: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/assets/services/website-development.png',
     benefits: [
       { title: 'Blazing Fast Performance', description: 'Near-instant page loads using modern frameworks like React, Next.js, and Vite.' },
       { title: 'Enterprise Security Standards', description: 'Rigorous data encryption, CSRF protection, sanitized API endpoints, and SSL compliance.' },
@@ -96,7 +96,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     iconName: 'Search',
     gradient: 'from-blue-600 to-cyan-600',
     bgBadge: 'bg-cyan-50 text-cyan-600',
-    heroImage: 'https://images.unsplash.com/photo-1571786256017-aee7a0c009b6?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/assets/services/seo-services.png',
     benefits: [
       { title: 'Top Google SERP Rankings', description: 'Consistent organic presence on page 1 for keywords your customers actively search.' },
       { title: 'High-Intent Organic Traffic', description: 'Attract qualified visitors ready to enquire and purchase rather than random clicks.' },
@@ -139,7 +139,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     iconName: 'Megaphone',
     gradient: 'from-blue-600 to-indigo-700',
     bgBadge: 'bg-blue-50 text-blue-700',
-    heroImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/assets/services/digital-marketing.png',
     benefits: [
       { title: 'High-Quality Inbound Leads', description: 'Connect with prospective clients who are actively looking for your exact services.' },
       { title: 'Maximum Marketing ROI', description: 'Data-driven audience segmentation ensuring every rupee spent produces measurable returns.' },
@@ -182,7 +182,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     iconName: 'Share2',
     gradient: 'from-purple-600 to-pink-600',
     bgBadge: 'bg-purple-50 text-purple-600',
-    heroImage: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/assets/services/social-media-marketing.png',
     benefits: [
       { title: 'Viral Brand Awareness', description: 'Reach hundreds of thousands of potential local and global customers through engaging reels and posts.' },
       { title: 'Authentic Community Building', description: 'Foster loyal followers who interact, share, and advocate for your products.' },
@@ -225,7 +225,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     iconName: 'PlaySquare',
     gradient: 'from-violet-600 to-purple-700',
     bgBadge: 'bg-violet-50 text-violet-600',
-    heroImage: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/assets/services/ai-ad-creation.png',
     benefits: [
       { title: '10x Faster Production', description: 'Produce studio-grade video commercials in days instead of weeks or months.' },
       { title: 'Fraction of Studio Costs', description: 'Eliminate expensive camera crews, studio rentals, actors, and location overhead.' },
@@ -268,7 +268,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     iconName: 'BadgePercent',
     gradient: 'from-amber-500 to-red-500',
     bgBadge: 'bg-amber-50 text-amber-600',
-    heroImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/assets/services/google-ads-management.png',
     benefits: [
       { title: 'Immediate Enquiries & Phone Calls', description: 'Start receiving calls and quote requests within hours of campaign launch.' },
       { title: 'Laser-Focused Intent Targeting', description: 'Show up exclusively when customers type ready-to-buy queries in Google.' },
@@ -311,7 +311,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     iconName: 'Palette',
     gradient: 'from-pink-500 to-rose-600',
     bgBadge: 'bg-rose-50 text-rose-600',
-    heroImage: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/assets/services/graphic-designing.png',
     benefits: [
       { title: 'Distinctive Visual Identity', description: 'Establish an iconic, instantly recognizable presence in your marketplace.' },
       { title: 'High-Resolution Print Readiness', description: 'Vector graphics and 300 DPI CMYK files ready for billboard or brochure printing.' },
@@ -354,7 +354,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     iconName: 'MapPin',
     gradient: 'from-blue-600 to-sky-600',
     bgBadge: 'bg-sky-50 text-sky-600',
-    heroImage: 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/assets/services/google-business-profile-management.png',
     benefits: [
       { title: 'Google 3-Pack Map Dominance', description: 'Be the first business local customers see when searching on Google Maps.' },
       { title: 'Skyrocketing Direct Phone Calls', description: 'Turn "near me" searches directly into incoming customer phone calls.' },
@@ -397,7 +397,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     iconName: 'Smartphone',
     gradient: 'from-blue-600 to-indigo-800',
     bgBadge: 'bg-indigo-50 text-indigo-700',
-    heroImage: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/assets/services/mobile-app-development.png',
     benefits: [
       { title: 'Cross-Platform Android & iOS', description: 'Single code base reducing development costs while providing native 60fps performance.' },
       { title: 'Push Notification Power', description: 'Engage users directly on their lock screens with discounts, alerts, and personalized reminders.' },
@@ -440,7 +440,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     iconName: 'Server',
     gradient: 'from-blue-700 to-sky-700',
     bgBadge: 'bg-blue-50 text-blue-700',
-    heroImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/assets/services/web-hosting-domain-registration.png',
     benefits: [
       { title: '99.9% Uptime Guarantee', description: 'High-availability cloud infrastructure ensuring your website is always reachable.' },
       { title: 'Free SSL Encryption & Firewall', description: 'Enterprise DDoS protection and automatic SSL certificates for complete data safety.' },
@@ -483,7 +483,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     iconName: 'GraduationCap',
     gradient: 'from-blue-600 to-indigo-600',
     bgBadge: 'bg-indigo-50 text-indigo-700',
-    heroImage: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/assets/services/training-internship.png',
     benefits: [
       { title: 'Live Client Project Exposure', description: 'Work on actual commercial websites and campaigns, not just textbook theory.' },
       { title: 'Industry-Recognized Certification', description: 'Earn credentials that validate your practical skills to leading tech employers.' },

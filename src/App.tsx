@@ -27,12 +27,16 @@ export const App: React.FC = () => {
 
   return (
     <Router>
-      <div className="min-h-screen flex flex-col bg-[#F5F8FF] text-slate-800">
+      <div className="min-h-screen flex flex-col bg-[#F5F8FF] text-slate-800 relative selection:bg-[#0866F5] selection:text-white">
+        
+        {/* Animated full-site background using image copy 20.png */}
+        <div className="site-animated-bg" />
+
         {/* Navigation Bar */}
         <Navbar onOpenQuote={() => setIsQuoteOpen(true)} />
 
         {/* Main Content View */}
-        <div className="flex-1">
+        <div className="flex-1 relative z-10">
           <Routes>
             <Route 
               path="/" 
@@ -96,7 +100,7 @@ export const App: React.FC = () => {
         {/* Global Footer */}
         <Footer />
 
-        {/* Interactive Floating Badges */}
+        {/* Interactive Floating Badges & Popups */}
         <WhatsAppButton />
         <QuickConsultationBadge onOpenQuote={() => setIsQuoteOpen(true)} />
 

@@ -66,3 +66,4 @@ export const QuickConsultationBadge: React.FC<QuickConsultationBadgeProps> = ({ 
     </div>
   );
 };
+

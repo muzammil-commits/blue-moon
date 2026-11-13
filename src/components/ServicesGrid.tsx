@@ -1,117 +1,92 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, Monitor, Code2, Search, Megaphone, 
-  Share2, PlaySquare, BadgePercent, Palette, 
-  MapPin, Smartphone, Server, GraduationCap 
-} from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import { SERVICES_DATA } from '../data/services';
 
 export const ServicesGrid: React.FC = () => {
-  const getServiceIcon = (slug: string) => {
-    switch (slug) {
-      case 'website-designing':
-        return <Monitor className="w-6 h-6 text-[#0866F5]" />;
-      case 'website-development':
-        return <Code2 className="w-6 h-6 text-[#102B8C]" />;
-      case 'seo-services':
-        return <Search className="w-6 h-6 text-[#087EFF]" />;
-      case 'digital-marketing':
-        return <Megaphone className="w-6 h-6 text-[#0866F5]" />;
-      case 'social-media-marketing':
-        return <Share2 className="w-6 h-6 text-[#7936F2]" />;
-      case 'ai-ad-creation':
-        return <PlaySquare className="w-6 h-6 text-[#9333EA]" />;
-      case 'google-ads-management':
-        return (
-          <div className="w-6 h-6 rounded-full flex items-center justify-center font-extrabold text-sm text-white bg-gradient-to-r from-red-500 via-amber-500 to-green-500">
-            G
-          </div>
-        );
-      case 'graphic-designing':
-        return <Palette className="w-6 h-6 text-[#EC4899]" />;
-      case 'google-business-profile-management':
-        return <MapPin className="w-6 h-6 text-[#0EA5E9]" />;
-      case 'mobile-app-development':
-        return <Smartphone className="w-6 h-6 text-[#2563EB]" />;
-      case 'web-hosting-domain-registration':
-        return <Server className="w-6 h-6 text-[#0284C7]" />;
-      case 'training-internship':
-        return <GraduationCap className="w-6 h-6 text-[#7C3AED]" />;
-      default:
-        return <Monitor className="w-6 h-6 text-[#0866F5]" />;
-    }
-  };
-
   return (
-    <section id="services" className="py-20 sm:py-24 bg-white relative">
+    <section id="services" className="py-16 sm:py-24 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs sm:text-sm font-bold uppercase tracking-wider">
-            Our Services
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100/80 text-[#0866F5] text-xs sm:text-sm font-extrabold uppercase tracking-wider shadow-sm">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Comprehensive Digital Solutions</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Comprehensive{' '}
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
+            12+ Expert Services For{' '}
             <span className="bg-gradient-to-r from-[#0866F5] via-[#4A5CE8] to-[#7936F2] bg-clip-text text-transparent">
-              Digital Solutions
+              Digital Growth
             </span>
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 font-medium">
-            12+ expert services to help you build, grow and succeed in the digital world.
+          <p className="text-sm sm:text-base text-slate-600 font-medium">
+            Explore our end-to-end technology and marketing services designed to scale your business.
           </p>
         </div>
 
-        {/* 12 Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-          {SERVICES_DATA.map((srv) => (
+        {/* 12 Services Grid with Real Service Images */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {SERVICES_DATA.map((srv, idx) => (
             <Link
               key={srv.id}
               to={`/services/${srv.slug}`}
-              className="group relative bg-[#F8FAFF] hover:bg-white rounded-2xl p-5 border border-[#E2E8F8] hover:border-blue-300 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+              className="group bg-white/90 backdrop-blur-md hover:bg-white rounded-3xl overflow-hidden border border-slate-200/80 hover:border-blue-400 shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-white shadow-sm border border-slate-100 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    {getServiceIcon(srv.slug)}
-                  </div>
+                {/* Service Real Image Thumbnail with zoom effect */}
+                <div className="relative aspect-video overflow-hidden bg-slate-100">
+                  <img
+                    src={srv.heroImage}
+                    alt={srv.title}
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
                   
-                  {/* Arrow circle */}
-                  <div className="w-8 h-8 rounded-full bg-blue-500/10 text-blue-600 group-hover:bg-[#0866F5] group-hover:text-white flex items-center justify-center transition-all">
+                  {/* Service Number Badge */}
+                  <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-full text-[11px] font-black text-blue-600 shadow-sm">
+                    0{idx + 1}
+                  </div>
+
+                  {/* Quick Arrow Circle */}
+                  <div className="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-white/95 text-blue-600 group-hover:bg-[#0866F5] group-hover:text-white flex items-center justify-center shadow-md transition-all group-hover:scale-110">
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                   </div>
                 </div>
 
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-[#0866F5] transition-colors mb-2 leading-snug">
-                  {srv.title}
-                </h3>
-                
-                <p className="text-xs sm:text-sm text-slate-500 line-clamp-2 leading-relaxed">
-                  {srv.shortDesc}
-                </p>
+                {/* Content */}
+                <div className="p-5">
+                  <h3 className="text-base font-extrabold text-slate-900 group-hover:text-[#0866F5] transition-colors mb-2 leading-snug">
+                    {srv.title}
+                  </h3>
+                  
+                  <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
+                    {srv.shortDesc}
+                  </p>
+                </div>
               </div>
 
-              <div className="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs font-semibold text-blue-600">
-                <span>Learn More</span>
-                <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+              {/* Card Footer Link */}
+              <div className="px-5 pb-4 pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-blue-600 group-hover:text-purple-600 transition-colors">
+                <span>Explore Service Details</span>
+                <span className="transition-transform group-hover:translate-x-1">→</span>
               </div>
             </Link>
           ))}
         </div>
 
-        {/* Bottom helper info */}
+        {/* View all services footer pill */}
         <div className="mt-12 text-center">
-          <p className="text-xs sm:text-sm text-slate-500">
-            Need a tailored solution for your company?{' '}
-            <Link to="/contact" className="text-blue-600 font-bold hover:underline">
-              Speak with our senior solutions architect →
-            </Link>
-          </p>
+          <Link
+            to="/services"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white border border-blue-200 text-[#0866F5] hover:bg-[#0866F5] hover:text-white font-extrabold text-xs sm:text-sm shadow-md transition-all active:scale-95 group"
+          >
+            <span>Browse Full Service Catalog & Deliverables</span>
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          </Link>
         </div>
 
       </div>
     </section>
   );
 };
-
