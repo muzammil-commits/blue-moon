@@ -111,3 +111,4 @@ export const HomeFaqSection: React.FC<HomeFaqSectionProps> = ({ onOpenQuote }) =
     </section>
   );
 };
+

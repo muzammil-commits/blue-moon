@@ -122,3 +122,4 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenQuote }) =
     </section>
   );
 };
+

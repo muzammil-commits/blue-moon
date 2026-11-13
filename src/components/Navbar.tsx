@@ -23,7 +23,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 15);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -59,86 +59,91 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
 
   return (
     <header className="sticky top-0 z-50 w-full font-sans shadow-sm transition-all duration-300">
-      {/* 1. Top Contact Bar */}
-      <div className="bg-[#102B8C] text-white text-xs py-2 px-4 sm:px-8 border-b border-blue-900/40">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-2">
+      
+      {/* 
+        1. Top Contact Bar (image copy 24.png / image copy 25.png)
+        - Reduced size on desktop (sleek, slim py-1)
+        - Completely hidden on mobile (hidden md:block) per image copy 25.png instruction
+      */}
+      <div className="hidden md:block bg-[#102B8C] text-white text-[11px] xl:text-xs py-1 px-4 sm:px-8 border-b border-blue-900/40">
+        <div className="max-w-7xl mx-auto flex justify-between items-center gap-2">
           {/* Contact Details */}
-          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-6 text-slate-200">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-slate-200">
             <a 
               href={`tel:${COMPANY_INFO.phoneClean}`} 
               className="flex items-center gap-1.5 hover:text-white transition-colors group"
             >
-              <div className="w-5 h-5 rounded-full bg-blue-700/60 flex items-center justify-center group-hover:bg-blue-600 transition-colors">
-                <Phone className="w-3 h-3 text-blue-200 group-hover:text-white" />
+              <div className="w-4 h-4 rounded-full bg-blue-700/60 flex items-center justify-center group-hover:bg-blue-600 transition-colors">
+                <Phone className="w-2.5 h-2.5 text-blue-200 group-hover:text-white" />
               </div>
               <span className="font-semibold tracking-wide">{COMPANY_INFO.phone}</span>
             </a>
 
-            <span className="hidden sm:inline text-blue-400/40">|</span>
+            <span className="text-blue-400/40">|</span>
 
             <a 
               href={`mailto:${COMPANY_INFO.email}`} 
               className="flex items-center gap-1.5 hover:text-white transition-colors group"
             >
-              <div className="w-5 h-5 rounded-full bg-blue-700/60 flex items-center justify-center group-hover:bg-blue-600 transition-colors">
-                <Mail className="w-3 h-3 text-blue-200 group-hover:text-white" />
+              <div className="w-4 h-4 rounded-full bg-blue-700/60 flex items-center justify-center group-hover:bg-blue-600 transition-colors">
+                <Mail className="w-2.5 h-2.5 text-blue-200 group-hover:text-white" />
               </div>
-              <span className="truncate max-w-[260px] sm:max-w-none">{COMPANY_INFO.email}</span>
+              <span className="truncate">{COMPANY_INFO.email}</span>
             </a>
 
             <span className="hidden lg:inline text-blue-400/40">|</span>
 
-            <div className="hidden xl:flex items-center gap-1.5 text-slate-300">
-              <MapPin className="w-3.5 h-3.5 text-blue-300 flex-shrink-0" />
-              <span className="truncate max-w-[420px]">{COMPANY_INFO.address.full}</span>
+            <div className="hidden lg:flex items-center gap-1.5 text-slate-300">
+              <MapPin className="w-3 h-3 text-blue-300 flex-shrink-0" />
+              <span className="truncate max-w-[360px] xl:max-w-[440px]">{COMPANY_INFO.address.full}</span>
             </div>
           </div>
 
           {/* Social Icons */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <a 
               href={COMPANY_INFO.social.facebook} 
               target="_blank" 
               rel="noreferrer" 
-              className="w-6 h-6 rounded-full bg-blue-800/80 hover:bg-blue-600 flex items-center justify-center transition-all hover:scale-110"
+              className="w-5 h-5 rounded-full bg-blue-800/80 hover:bg-blue-600 flex items-center justify-center transition-all hover:scale-110"
               aria-label="Facebook"
             >
-              <Facebook className="w-3 h-3 text-white" />
+              <Facebook className="w-2.5 h-2.5 text-white" />
             </a>
             <a 
               href={COMPANY_INFO.social.linkedin} 
               target="_blank" 
               rel="noreferrer" 
-              className="w-6 h-6 rounded-full bg-blue-800/80 hover:bg-blue-600 flex items-center justify-center transition-all hover:scale-110"
+              className="w-5 h-5 rounded-full bg-blue-800/80 hover:bg-blue-600 flex items-center justify-center transition-all hover:scale-110"
               aria-label="LinkedIn"
             >
-              <Linkedin className="w-3 h-3 text-white" />
+              <Linkedin className="w-2.5 h-2.5 text-white" />
             </a>
             <a 
               href={COMPANY_INFO.social.youtube} 
               target="_blank" 
               rel="noreferrer" 
-              className="w-6 h-6 rounded-full bg-blue-800/80 hover:bg-blue-600 flex items-center justify-center transition-all hover:scale-110"
+              className="w-5 h-5 rounded-full bg-blue-800/80 hover:bg-blue-600 flex items-center justify-center transition-all hover:scale-110"
               aria-label="YouTube"
             >
-              <Youtube className="w-3 h-3 text-white" />
+              <Youtube className="w-2.5 h-2.5 text-white" />
             </a>
           </div>
         </div>
       </div>
 
-      {/* 2. Main Navigation Bar with Enlarged, Clean Transparent Logo */}
+      {/* 2. Main Navigation Bar with Official Logo (image copy 23.png) */}
       <nav className={`bg-white transition-all duration-300 border-b border-slate-100 ${
-        isScrolled ? 'py-2 shadow-md' : 'py-3'
+        isScrolled ? 'py-2 shadow-md' : 'py-2.5 sm:py-3'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between">
           
-          {/* Logo (Increased size & Zero patchwork background) */}
+          {/* Official High-Resolution Transparent Logo (image copy 23.png) */}
           <Link to="/" className="flex items-center group focus:outline-none">
             <img 
               src="/assets/logo-light.png" 
               alt="BlueMoon Software Solutions" 
-              className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-transform group-hover:scale-102 filter drop-shadow-sm"
+              className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-transform group-hover:scale-102 filter drop-shadow-sm"
               onError={(e) => {
                 const target = e.currentTarget;
                 target.style.display = 'none';
@@ -147,12 +152,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
               }}
             />
             <div className="hidden items-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 flex items-center justify-center text-white font-black text-xl shadow-md">
+              <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 flex items-center justify-center text-white font-black text-lg shadow-md">
                 B
               </div>
               <div className="flex flex-col">
-                <span className="font-extrabold text-2xl text-blue-600 leading-none tracking-tight">Blue<span className="text-purple-600">Moon</span></span>
-                <span className="text-[10px] font-bold text-slate-700 tracking-wider">SOFTWARE SOLUTIONS</span>
+                <span className="font-extrabold text-xl text-blue-600 leading-none tracking-tight">Blue<span className="text-purple-600">Moon</span></span>
+                <span className="text-[9px] font-bold text-slate-700 tracking-wider">SOFTWARE SOLUTIONS</span>
               </div>
             </div>
           </Link>
@@ -332,7 +337,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
           <div className="flex lg:hidden items-center gap-2">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-xl bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors focus:outline-none"
+              className="p-2 rounded-xl bg-blue-50 text-blue-600 hover:bg-blue-100 transition-colors focus:outline-none"
               aria-label="Toggle navigation"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

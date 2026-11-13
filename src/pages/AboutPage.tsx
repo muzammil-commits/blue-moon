@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { 
-  Rocket, Target, Gem, CheckCircle2, Trophy, 
+  Rocket, Target, Gem, CheckCircle2,
   Users, ShieldCheck, HeartHandshake, ArrowRight,
-  Sparkles, Award, Globe, Clock
+  Clock, Globe, Award, Sparkles, Building2
 } from 'lucide-react';
 import { COMPANY_INFO } from '../data/company';
+import { CountUp } from '../components/CountUp';
 
 interface AboutPageProps {
   onOpenQuote: () => void;
@@ -27,7 +27,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenQuote }) => {
               Digital Future
             </span>
           </h1>
-          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto mt-6 leading-relaxed font-normal">
+          <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto mt-6 leading-relaxed font-normal">
             {COMPANY_INFO.name} is a complete digital solutions company offering website designing, website development, software solutions and digital marketing services under one roof.
           </p>
         </div>
@@ -48,7 +48,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenQuote }) => {
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-gradient-to-tr from-[#0866F5] to-[#7936F2] text-white p-6 rounded-3xl shadow-xl hidden sm:block">
-                <div className="text-3xl font-black">12+ Years</div>
+                <div className="text-3xl font-black">
+                  <CountUp end={12} suffix="+" duration={1600} /> Years
+                </div>
                 <div className="text-xs text-blue-100 font-medium">Of Technological Innovation</div>
               </div>
             </div>
@@ -68,14 +70,18 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenQuote }) => {
                 We combine human-centered UI/UX design with robust modern engineering and aggressive digital marketing strategies. Whether you need a corporate web portal, a high-converting lead funnel, or an end-to-end mobile app, we deliver solutions that drive measurable business impact.
               </p>
 
-              {/* Achievements Grid */}
+              {/* Achievements Grid with CountUp */}
               <div className="grid grid-cols-2 gap-4 pt-2">
                 <div className="p-4 rounded-2xl bg-blue-50/70 border border-blue-100">
-                  <div className="text-2xl font-black text-blue-600">325+</div>
+                  <div className="text-3xl font-black text-blue-600">
+                    <CountUp end={325} suffix="+" duration={2000} />
+                  </div>
                   <div className="text-xs font-bold text-slate-700 mt-0.5">Projects Delivered</div>
                 </div>
                 <div className="p-4 rounded-2xl bg-purple-50/70 border border-purple-100">
-                  <div className="text-2xl font-black text-purple-600">100%</div>
+                  <div className="text-3xl font-black text-purple-600">
+                    <CountUp end={100} suffix="%" duration={1800} />
+                  </div>
                   <div className="text-xs font-bold text-slate-700 mt-0.5">Client Satisfaction</div>
                 </div>
               </div>
@@ -85,7 +91,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenQuote }) => {
         </div>
       </section>
 
-      {/* 3. Vision, Mission & Purpose */}
+      {/* 3. Vision & Mission */}
       <section id="vision" className="py-20 bg-[#F5F8FF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
@@ -156,7 +162,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenQuote }) => {
       </section>
 
       {/* 5. Why Choose BlueMoon */}
-      <section className="py-20 bg-gradient-to-b from-white to-[#F5F8FF]">
+      <section className="py-20 bg-[#F5F8FF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
             <span className="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-[#0866F5] text-xs font-bold uppercase tracking-wider">
@@ -184,7 +190,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenQuote }) => {
             ))}
           </div>
 
-          {/* CTA Banner */}
+          {/* 6. CTA Banner */}
           <div className="mt-16 bg-gradient-to-r from-[#0866F5] to-[#7936F2] rounded-3xl p-8 sm:p-12 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
             <div>
               <h3 className="text-2xl sm:text-3xl font-extrabold mb-2">
@@ -208,4 +214,3 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenQuote }) => {
     </main>
   );
 };
-
