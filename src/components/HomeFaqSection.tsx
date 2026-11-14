@@ -28,7 +28,7 @@ export const HomeFaqSection: React.FC<HomeFaqSectionProps> = ({ onOpenQuote }) =
     },
     {
       q: 'How do we get started with a project quote or consultation?',
-      a: 'You can click "Get a Quote" or "Book Free Consultation" on any page, or connect with us directly on WhatsApp at +91 9154 330011. Our technical team responds within 2 hours with a comprehensive roadmap.'
+      a: `You can click "Get a Quote" or "Book Free Consultation" on any page, or connect with us directly on WhatsApp at ${COMPANY_INFO.phone}. Our technical team responds within 2 hours with a comprehensive roadmap.`
     }
   ];
 

@@ -4,9 +4,9 @@ export const COMPANY_INFO = {
   tagline: 'Your Trusted Partner for Digital Transformation',
   subheading: 'Innovative Digital Solutions',
   description: 'We craft innovative websites, develop powerful software and drive business growth with result-oriented digital marketing strategies.',
-  phone: '+91 9154 330011',
-  phoneClean: '+919154330011',
-  email: 'contact@webengerssoftwaresolutions.com',
+  phone: '+91 96188 70088',
+  phoneClean: '+919618870088',
+  email: 'contact@bluemoonsoftwaresolutions.com',
   address: {
     line1: '44-36-5/1, Akkayyapalem 80 Feet Road',
     line2: 'Srinivasa Nagar, Akkayyapalem',
@@ -24,7 +24,7 @@ export const COMPANY_INFO = {
     twitter: 'https://twitter.com',
   },
   whatsapp: {
-    number: '919154330011',
+    number: '919618870088',
     message: 'Hello BlueMoon Software Solutions, I would like to know more about your services.'
   },
   stats: [

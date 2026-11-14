@@ -38,7 +38,7 @@ A complete, production-ready, multi-page business website designed and built for
 - **Interactive Modals & Integrations**:
   - **Get a Quote Modal**: Interactive multi-field requirement and budget estimator.
   - **Watch Our Intro Modal**: Interactive company presentation video viewer.
-  - **Floating WhatsApp Integration**: Persistent direct WhatsApp link to `+91 9154 330011` with customized pre-filled message.
+  - **Floating WhatsApp Integration**: Persistent direct WhatsApp link to `+91 96188 70088` with customized pre-filled message.
   - **Sticky Navbar**: Blur backdrop and responsive dropdowns.
   - **Mobile Drawer**: Accessible mobile navigation menu with sub-accordions.
 
@@ -69,7 +69,7 @@ npm run preview
 
 ## 📍 Contact Information
 
-- **Phone**: +91 9154 330011
-- **Email**: contact@webengerssoftwaresolutions.com
+- **Phone**: +91 96188 70088
+- **Email**: contact@bluemoonsoftwaresolutions.com
 - **Address**: 44-36-5/1, Akkayyapalem 80 Feet Road, Srinivasa Nagar, Akkayyapalem, Visakhapatnam – 530016, Andhra Pradesh, India.
 

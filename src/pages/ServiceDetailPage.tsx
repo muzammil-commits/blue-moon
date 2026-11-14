@@ -330,7 +330,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onOpenQuot
               className="px-7 py-4 rounded-full border border-white/40 text-white font-extrabold text-sm hover:bg-white/10 active:scale-95 transition-all flex items-center gap-2"
             >
               <Phone className="w-4 h-4" />
-              <span>Call +91 9154 330011</span>
+              <span>Call {COMPANY_INFO.phone}</span>
             </a>
           </div>
         </div>
