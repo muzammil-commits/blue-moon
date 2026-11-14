@@ -139,11 +139,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between">
           
           {/* Official High-Resolution Transparent Logo (image copy 23.png) */}
-          <Link to="/" className="flex items-center group focus:outline-none">
+          <Link to="/" className="flex items-center group focus:outline-none py-1">
             <img 
               src="/assets/logo-light.png" 
               alt="BlueMoon Software Solutions" 
-              className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-transform group-hover:scale-102 filter drop-shadow-sm"
+              className="h-12 sm:h-14 md:h-16 lg:h-18 max-w-[240px] sm:max-w-[280px] md:max-w-[340px] w-auto object-contain transition-transform group-hover:scale-105 filter drop-shadow-sm"
               onError={(e) => {
                 const target = e.currentTarget;
                 target.style.display = 'none';
@@ -348,6 +348,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
         {/* 3. Mobile Navigation Drawer */}
         {mobileMenuOpen && (
           <div className="lg:hidden bg-white border-t border-slate-100 px-6 py-6 space-y-4 max-h-[85vh] overflow-y-auto shadow-2xl animate-in slide-in-from-top-4 duration-200">
+            {/* Mobile Drawer Brand Logo */}
+            <div className="pb-3 border-b border-slate-100 flex items-center justify-between">
+              <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+                <img 
+                  src="/assets/logo-light.png" 
+                  alt="BlueMoon Software Solutions" 
+                  className="h-11 sm:h-12 w-auto object-contain"
+                />
+              </Link>
+              <span className="text-[10px] font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full uppercase">
+                Menu
+              </span>
+            </div>
+
             <div className="flex flex-col space-y-2">
               <Link
                 to="/"

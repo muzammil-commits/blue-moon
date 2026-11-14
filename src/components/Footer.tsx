@@ -15,11 +15,11 @@ export const Footer: React.FC = () => {
           
           {/* Col 1: Brand Info */}
           <div className="lg:col-span-4 space-y-5">
-            <Link to="/" className="inline-block">
+            <Link to="/" className="inline-block py-1 group">
               <img
                 src="/assets/logo-dark.png"
                 alt="BlueMoon Software Solutions"
-                className="h-12 sm:h-14 md:h-16 w-auto object-contain filter drop-shadow"
+                className="h-14 sm:h-16 md:h-20 lg:h-22 max-w-[260px] sm:max-w-[320px] md:max-w-[380px] w-auto object-contain transition-transform group-hover:scale-105 filter drop-shadow-lg"
                 onError={(e) => {
                   const target = e.currentTarget;
                   target.style.display = 'none';

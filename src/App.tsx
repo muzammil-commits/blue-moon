@@ -6,6 +6,7 @@ import { WhatsAppButton } from './components/WhatsAppButton';
 import { QuoteModal } from './components/QuoteModal';
 import { VideoModal } from './components/VideoModal';
 import { QuickConsultationBadge } from './components/QuickConsultationBadge';
+import { SplashScreen } from './components/SplashScreen';
 
 // Pages
 import { HomePage } from './pages/HomePage';
@@ -29,6 +30,9 @@ export const App: React.FC = () => {
     <Router>
       <div className="min-h-screen flex flex-col bg-[#F5F8FF] text-slate-800 relative selection:bg-[#0866F5] selection:text-white">
         
+        {/* Brand Splash Screen with Animated Official Logo */}
+        <SplashScreen minDuration={1600} />
+
         {/* Animated full-site background using image copy 20.png */}
         <div className="site-animated-bg" />
 

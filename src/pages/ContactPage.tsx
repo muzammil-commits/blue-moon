@@ -45,13 +45,36 @@ export const ContactPage: React.FC = () => {
     }
 
     setFormStatus('submitting');
-    // Simulate real client submission
+
+    const serviceTitle = SERVICES_DATA.find((s) => s.slug === formData.service)?.title || formData.service;
+    const waText = 
+`*NEW WEBSITE INQUIRY* 📨
+*BlueMoon Software Solutions*
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+👤 *Client Name:* ${formData.name.trim()}
+📱 *Phone:* ${formData.phone.trim()}
+✉️ *Email:* ${formData.email.trim()}
+💼 *Subject / Service:* ${serviceTitle}
+📝 *Message:*
+${formData.message.trim()}
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+📅 *Date:* ${new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
+🌐 *Source:* BlueMoon Contact Page`;
+
+    const waUrl = `https://wa.me/919618870088?text=${encodeURIComponent(waText)}`;
+
+    try {
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
+    } catch (e) {
+      console.error(e);
+    }
+
     setTimeout(() => {
       setFormStatus('submitted');
-    }, 1200);
+    }, 600);
   };
 
-  const whatsappUrl = `https://wa.me/${COMPANY_INFO.whatsapp.number}?text=${encodeURIComponent(
+  const whatsappUrl = `https://wa.me/919618870088?text=${encodeURIComponent(
     `Hello BlueMoon Software Solutions, I would like to get in touch regarding ${formData.service || 'your services'}.`
   )}`;
 
@@ -173,23 +196,38 @@ export const ContactPage: React.FC = () => {
                 )}
 
                 {formStatus === 'submitted' ? (
-                  <div className="bg-white rounded-2xl p-8 border border-emerald-100 text-center space-y-4">
+                  <div className="bg-white rounded-2xl p-8 border border-emerald-100 text-center space-y-4 shadow-sm">
                     <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
                       <CheckCircle2 className="w-8 h-8" />
                     </div>
-                    <h4 className="text-xl font-bold text-slate-900">Inquiry Successfully Submitted</h4>
+                    <h4 className="text-xl font-bold text-slate-900">Inquiry Dispatched to WhatsApp!</h4>
                     <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-                      Thank you, <strong>{formData.name}</strong>. Your enquiry regarding <strong>{formData.service}</strong> has been logged. Our consulting team will contact you shortly via email or phone.
+                      Thank you, <strong>{formData.name}</strong>. Your inquiry has been formatted and connected directly to our WhatsApp support line (<strong>+91 96188 70088</strong>).
                     </p>
-                    <button
-                      onClick={() => {
-                        setFormStatus('idle');
-                        setFormData({ name: '', email: '', phone: '', service: 'website-development', message: '' });
-                      }}
-                      className="px-6 py-2.5 rounded-full bg-[#0866F5] text-white font-bold text-xs hover:bg-blue-600 transition-colors"
-                    >
-                      Send Another Message
-                    </button>
+                    <div className="pt-2">
+                      <a
+                        href={`https://wa.me/919618870088?text=${encodeURIComponent(
+                          `*INQUIRY FOLLOW-UP*\nName: ${formData.name}\nService: ${formData.service}\nPhone: ${formData.phone}`
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#25D366] text-white font-bold text-xs shadow-md hover:bg-[#20ba59] transition-all"
+                      >
+                        <MessageSquare className="w-4 h-4 fill-current" />
+                        <span>Open Chat in WhatsApp</span>
+                      </a>
+                    </div>
+                    <div className="pt-2">
+                      <button
+                        onClick={() => {
+                          setFormStatus('idle');
+                          setFormData({ name: '', email: '', phone: '', service: 'website-development', message: '' });
+                        }}
+                        className="px-6 py-2.5 rounded-full bg-slate-100 text-slate-700 font-bold text-xs hover:bg-slate-200 transition-colors"
+                      >
+                        Send Another Message
+                      </button>
+                    </div>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
