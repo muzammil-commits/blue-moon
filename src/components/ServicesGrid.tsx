@@ -15,7 +15,7 @@ export const ServicesGrid: React.FC = () => {
             <span>Comprehensive Digital Solutions</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
-            12+ Expert Services For{' '}
+            5+ Expert Services For{' '}
             <span className="bg-gradient-to-r from-[#0866F5] via-[#4A5CE8] to-[#7936F2] bg-clip-text text-transparent">
               Digital Growth
             </span>

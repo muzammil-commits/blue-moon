@@ -25,4 +25,7 @@ dist-ssr
 
 # Temporary test files
 test_*.png
+image*.png
+image copy*.png
+
 

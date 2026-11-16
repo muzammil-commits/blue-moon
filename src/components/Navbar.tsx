@@ -97,7 +97,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
               href={COMPANY_INFO.social.facebook} 
               target="_blank" 
               rel="noreferrer" 
-              className="w-6 h-6 rounded-full bg-blue-800/90 hover:bg-blue-500 flex items-center justify-center transition-all hover:scale-110 shadow-sm"
+              className="w-6 h-6 rounded-full bg-[#1877F2] hover:brightness-110 flex items-center justify-center transition-all hover:scale-110 shadow-sm"
               aria-label="Facebook"
             >
               <Facebook className="w-3.5 h-3.5 text-white" />
@@ -106,7 +106,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
               href={COMPANY_INFO.social.instagram} 
               target="_blank" 
               rel="noreferrer" 
-              className="w-6 h-6 rounded-full bg-blue-800/90 hover:bg-pink-600 flex items-center justify-center transition-all hover:scale-110 shadow-sm"
+              className="w-6 h-6 rounded-full bg-gradient-to-tr from-[#FD1D1D] via-[#E1306C] to-[#833AB4] hover:brightness-110 flex items-center justify-center transition-all hover:scale-110 shadow-sm"
               aria-label="Instagram"
             >
               <Instagram className="w-3.5 h-3.5 text-white" />
@@ -115,7 +115,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
               href={COMPANY_INFO.social.linkedin} 
               target="_blank" 
               rel="noreferrer" 
-              className="w-6 h-6 rounded-full bg-blue-800/90 hover:bg-blue-500 flex items-center justify-center transition-all hover:scale-110 shadow-sm"
+              className="w-6 h-6 rounded-full bg-[#0A66C2] hover:brightness-110 flex items-center justify-center transition-all hover:scale-110 shadow-sm"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-3.5 h-3.5 text-white" />
@@ -124,18 +124,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
         </div>
       </div>
 
-      {/* 2. Main Navigation Bar with Nav Padding - 0 & Logo Height 4 to 5 rem */}
+      {/* 2. Main Navigation Bar with Balanced Padding & Crisp Responsive Logo */}
       <nav className={`bg-white transition-all duration-300 border-b border-slate-100 ${
-        isScrolled ? 'py-0 shadow-md' : 'py-0 sm:py-0.5'
+        isScrolled ? 'py-1 sm:py-1.5 shadow-md' : 'py-1.5 sm:py-2'
       }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           
-          {/* Official High-Resolution Transparent Logo (Height 4 to 5rem / h-16 to h-20) */}
-          <Link to="/" className="flex items-center group focus:outline-none py-0">
+          {/* Official High-Resolution Transparent Logo */}
+          <Link to="/" className="flex-shrink-0 flex items-center group focus:outline-none py-0">
             <img 
               src="/assets/logo-light.png" 
               alt="BlueMoon Software Solutions" 
-              className="h-16 sm:h-18 md:h-20 max-w-[280px] sm:max-w-[340px] md:max-w-[400px] w-auto object-contain transition-transform group-hover:scale-102 filter drop-shadow-sm"
+              className="h-12 sm:h-14 md:h-16 max-w-[220px] sm:max-w-[280px] md:max-w-[340px] w-auto object-contain transition-transform group-hover:scale-102 filter drop-shadow-sm"
               onError={(e) => {
                 const target = e.currentTarget;
                 target.style.display = 'none';
@@ -201,7 +201,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
                   <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
                     <div>
                       <h4 className="font-extrabold text-slate-900 text-sm">Comprehensive Services</h4>
-                      <p className="text-xs text-slate-500">12+ expert services to build and scale your business</p>
+                      <p className="text-xs text-slate-500">5+ expert services to build and scale your business</p>
                     </div>
                     <Link 
                       to="/services" 
@@ -338,7 +338,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
                   onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
                   className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-base font-semibold text-slate-800 hover:bg-blue-50"
                 >
-                  <span>Services (12)</span>
+                  <span>Services (5+)</span>
                   <ChevronDown className={`w-4 h-4 transition-transform ${mobileServicesOpen ? 'rotate-180 text-blue-600' : ''}`} />
                 </button>
 

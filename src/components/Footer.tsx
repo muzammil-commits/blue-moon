@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, ChevronRight, Facebook, Linkedin, Youtube, Globe } from 'lucide-react';
+import { Phone, Mail, MapPin, ChevronRight, Facebook, Linkedin, Instagram } from 'lucide-react';
 import { COMPANY_INFO } from '../data/company';
 
 export const Footer: React.FC = () => {
@@ -42,43 +42,34 @@ export const Footer: React.FC = () => {
               Your trusted partner for digital transformation, digital marketing and innovative IT solutions. We build scalable technology that drives business growth.
             </p>
 
-            {/* Social Icons */}
+            {/* Social Icons: Facebook, Instagram, LinkedIn */}
             <div className="flex items-center gap-3 pt-2">
               <a
                 href={COMPANY_INFO.social.facebook}
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-slate-800/80 hover:bg-[#0866F5] text-slate-300 hover:text-white flex items-center justify-center transition-all hover:scale-110 shadow-sm"
+                className="w-9 h-9 rounded-full bg-[#1877F2] text-white hover:brightness-110 flex items-center justify-center transition-all hover:scale-110 shadow-sm"
                 aria-label="Facebook"
               >
                 <Facebook className="w-4 h-4" />
               </a>
               <a
+                href={COMPANY_INFO.social.instagram}
+                target="_blank"
+                rel="noreferrer"
+                className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#FD1D1D] via-[#E1306C] to-[#833AB4] text-white hover:brightness-110 flex items-center justify-center transition-all hover:scale-110 shadow-sm"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a
                 href={COMPANY_INFO.social.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-slate-800/80 hover:bg-[#0866F5] text-slate-300 hover:text-white flex items-center justify-center transition-all hover:scale-110 shadow-sm"
+                className="w-9 h-9 rounded-full bg-[#0A66C2] text-white hover:brightness-110 flex items-center justify-center transition-all hover:scale-110 shadow-sm"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
-              </a>
-              <a
-                href={COMPANY_INFO.social.youtube}
-                target="_blank"
-                rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-slate-800/80 hover:bg-red-600 text-slate-300 hover:text-white flex items-center justify-center transition-all hover:scale-110 shadow-sm"
-                aria-label="YouTube"
-              >
-                <Youtube className="w-4 h-4" />
-              </a>
-              <a
-                href="https://bluemoonsoftwaresolutions.com"
-                target="_blank"
-                rel="noreferrer"
-                className="w-9 h-9 rounded-full bg-slate-800/80 hover:bg-purple-600 text-slate-300 hover:text-white flex items-center justify-center transition-all hover:scale-110 shadow-sm"
-                aria-label="Website"
-              >
-                <Globe className="w-4 h-4" />
               </a>
             </div>
           </div>
