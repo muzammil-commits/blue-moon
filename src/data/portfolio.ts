@@ -150,7 +150,7 @@ export const PORTFOLIO_DATA: PortfolioProject[] = [
     title: 'Procare Service Center',
     category: 'Local Service & Booking',
     description: 'Premium home appliances customer care and multi-brand warranty servicing website. Engineered with customer service ticket logging, regional dispatch coverage maps, and warranty repair booking funnels.',
-    image: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80',
+    image: '/assets/portfolio/procare-service.jpg',
     client: 'Procare Service Center (Live Client Project)',
     duration: '4 Weeks',
     tags: ['Customer Care', 'Multi-Brand Repair', 'WhatsApp Leads', 'Service Guarantee', 'Responsive UI'],
