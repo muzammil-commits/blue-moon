@@ -20,14 +20,17 @@ export interface ServiceItem {
 export interface PortfolioProject {
   id: string;
   title: string;
-  category: 'Website Design' | 'Web Development' | 'Mobile App' | 'SEO & Marketing' | 'Graphic Design';
+  category: string;
   description: string;
   image: string;
   client: string;
   duration: string;
   tags: string[];
   demoUrl?: string;
+  liveUrl?: string;
   stats?: string;
+  highlights?: string[];
+  features?: string[];
 }
 
 export interface Testimonial {

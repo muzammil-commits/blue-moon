@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { SERVICES_DATA } from '../data/services';
-import { BLOGS_DATA } from '../data/blogs';
 
 export const SitemapPage: React.FC = () => {
   return (
@@ -23,7 +22,6 @@ export const SitemapPage: React.FC = () => {
               <li><Link to="/services" className="hover:underline">Services Overview</Link></li>
               <li><Link to="/portfolio" className="hover:underline">Portfolio</Link></li>
               <li><Link to="/testimonials" className="hover:underline">Client Testimonials</Link></li>
-              <li><Link to="/blog" className="hover:underline">Blog & Insights</Link></li>
               <li><Link to="/contact" className="hover:underline">Contact Us</Link></li>
               <li><Link to="/privacy-policy" className="hover:underline">Privacy Policy</Link></li>
               <li><Link to="/terms" className="hover:underline">Terms & Conditions</Link></li>
@@ -42,19 +40,6 @@ export const SitemapPage: React.FC = () => {
               ))}
             </ul>
           </div>
-        </div>
-
-        <div className="space-y-4 pt-4 border-t">
-          <h2 className="text-lg font-bold text-slate-900 border-b pb-2">Knowledge Base Articles</h2>
-          <ul className="space-y-2 text-sm text-blue-600 font-medium">
-            {BLOGS_DATA.map((b) => (
-              <li key={b.id}>
-                <Link to={`/blog/${b.slug}`} className="hover:underline">
-                  {b.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </main>

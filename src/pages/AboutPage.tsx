@@ -49,7 +49,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenQuote }) => {
               </div>
               <div className="absolute -bottom-6 -right-6 bg-gradient-to-tr from-[#0866F5] to-[#7936F2] text-white p-6 rounded-3xl shadow-xl hidden sm:block">
                 <div className="text-3xl font-black">
-                  <CountUp end={12} suffix="+" duration={1600} /> Years
+                  <CountUp end={5} suffix="+" duration={1600} /> Years
                 </div>
                 <div className="text-xs text-blue-100 font-medium">Of Technological Innovation</div>
               </div>
@@ -74,7 +74,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenQuote }) => {
               <div className="grid grid-cols-2 gap-4 pt-2">
                 <div className="p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-blue-200/80 shadow-md">
                   <div className="text-3xl font-black text-blue-600">
-                    <CountUp end={325} suffix="+" duration={2000} />
+                    <CountUp end={100} suffix="+" duration={2000} />
                   </div>
                   <div className="text-xs font-bold text-slate-700 mt-0.5">Projects Delivered</div>
                 </div>
@@ -175,8 +175,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenQuote }) => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: <Clock className="w-6 h-6 text-blue-600" />, title: '12+ Years Experience', desc: 'Over a decade of hands-on technical proficiency across diverse market verticals.' },
-              { icon: <ShieldCheck className="w-6 h-6 text-indigo-600" />, title: 'Proven Track Record', desc: '325+ completed projects with 100% client satisfaction and zero compromise on quality.' },
+              { icon: <Clock className="w-6 h-6 text-blue-600" />, title: '5+ Years Experience', desc: 'Over five years of hands-on technical proficiency across diverse market verticals.' },
+              { icon: <ShieldCheck className="w-6 h-6 text-indigo-600" />, title: 'Proven Track Record', desc: '100+ completed projects with 100% client satisfaction and zero compromise on quality.' },
               { icon: <Globe className="w-6 h-6 text-cyan-600" />, title: 'Full Spectrum Services', desc: 'Everything from UI/UX design and cloud servers to SEO, Google Ads, and mobile apps.' },
               { icon: <HeartHandshake className="w-6 h-6 text-purple-600" />, title: 'Dedicated Support', desc: 'Transparent weekly updates, direct WhatsApp channels, and 24/7 technical monitoring.' },
             ].map((feature, idx) => (

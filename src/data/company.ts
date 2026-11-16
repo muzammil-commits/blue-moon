@@ -28,8 +28,8 @@ export const COMPANY_INFO = {
     message: 'Hello BlueMoon Software Solutions, I would like to know more about your services.'
   },
   stats: [
-    { value: '12+', label: 'Years of Experience', icon: 'Trophy' },
-    { value: '325+', label: 'Completed Projects', icon: 'FolderGit2' },
+    { value: '5+', label: 'Years of Experience', icon: 'Trophy' },
+    { value: '100+', label: 'Completed Projects', icon: 'FolderGit2' },
     { value: 'Global', label: 'Serving Clients Worldwide', icon: 'Globe2' },
     { value: '24/7', label: 'Dedicated Support', icon: 'Headphones' },
   ],

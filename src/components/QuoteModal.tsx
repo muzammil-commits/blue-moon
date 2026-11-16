@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Send, CheckCircle2, AlertCircle, MessageSquare, ExternalLink } from 'lucide-react';
+import { X, Send, CheckCircle2, AlertCircle, MessageSquare, ExternalLink, Building2 } from 'lucide-react';
 import { SERVICES_DATA } from '../data/services';
 import { COMPANY_INFO } from '../data/company';
 
@@ -11,10 +11,11 @@ interface QuoteModalProps {
 
 export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose, defaultService }) => {
   const [fullName, setFullName] = useState('');
+  const [businessName, setBusinessName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [service, setService] = useState(defaultService || 'website-development');
-  const [budget, setBudget] = useState('₹30,000 - ₹75,000 (Growth / Corporate Portal)');
+  const [service, setService] = useState(defaultService || 'social-media-marketing');
+  const [budget, setBudget] = useState('Starting from ₹5,000 (Basic Setup / Starter Website)');
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -27,12 +28,12 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose, default
     e.preventDefault();
     setErrorMessage('');
 
-    // Validation
+    // Validation - Name and Phone required, Email optional
     if (!fullName.trim()) {
       setErrorMessage('Please enter your full name.');
       return;
     }
-    if (!email.trim() || !email.includes('@')) {
+    if (email.trim() && !email.includes('@')) {
       setErrorMessage('Please enter a valid email address.');
       return;
     }
@@ -52,11 +53,12 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose, default
 *BlueMoon Software Solutions*
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
 👤 *Client Name:* ${fullName.trim()}
+🏢 *About Business:* ${businessName.trim() || 'Business details discussed on call'}
 📱 *Phone:* ${phone.trim()}
-✉️ *Email:* ${email.trim()}
+✉️ *Email:* ${email.trim() || 'Not provided'}
 💼 *Selected Service:* ${serviceName}
 💰 *Estimated Budget:* ${budget}
-📝 *Project Details / Requirements:*
+📝 *Project Brief / Requirements:*
 ${message.trim() || 'Client requested initial consultation.'}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━
 📅 *Date:* ${new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
@@ -83,6 +85,7 @@ ${message.trim() || 'Client requested initial consultation.'}
   const handleReset = () => {
     setIsSubmitted(false);
     setFullName('');
+    setBusinessName('');
     setEmail('');
     setPhone('');
     setMessage('');
@@ -161,7 +164,7 @@ ${message.trim() || 'Client requested initial consultation.'}
                 Get a Free Custom Quote
               </h3>
               <p className="text-xs sm:text-sm text-slate-500 mt-1">
-                Fill in your details below and send directly to our team on WhatsApp at <strong>+91 96188 70088</strong> for instant estimation.
+                Fill in your project details below and send directly to our team on WhatsApp at <strong>+91 96188 70088</strong>.
               </p>
             </div>
 
@@ -190,14 +193,13 @@ ${message.trim() || 'Client requested initial consultation.'}
 
                 <div>
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
-                    Email Address *
+                    About Business / Company Name
                   </label>
                   <input
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="name@company.com"
+                    type="text"
+                    value={businessName}
+                    onChange={(e) => setBusinessName(e.target.value)}
+                    placeholder="e.g. Retail Store, Clinic, Tax Firm, Startup..."
                     className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none text-sm text-slate-800 transition-all"
                   />
                 </div>
@@ -220,6 +222,21 @@ ${message.trim() || 'Client requested initial consultation.'}
 
                 <div>
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="name@company.com"
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none text-sm text-slate-800 transition-all"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                     Select Service *
                   </label>
                   <select
@@ -227,29 +244,37 @@ ${message.trim() || 'Client requested initial consultation.'}
                     onChange={(e) => setService(e.target.value)}
                     className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none text-sm text-slate-800 bg-white transition-all"
                   >
-                    {SERVICES_DATA.map((srv) => (
-                      <option key={srv.slug} value={srv.slug}>
-                        {srv.title}
-                      </option>
-                    ))}
+                    <option value="social-media-marketing">Social Media Marketing & Services</option>
+                    <option value="website-designing">Website Designing</option>
+                    <option value="website-development">Website Development</option>
+                    <option value="seo-services">SEO Services</option>
+                    <option value="digital-marketing">Digital Marketing</option>
+                    <option value="ai-ad-creation">AI Ad Creation</option>
+                    <option value="google-ads-management">Google Ads Management</option>
+                    <option value="graphic-designing">Graphic Designing</option>
+                    <option value="google-business-profile-management">Google Business Profile Management</option>
+                    <option value="mobile-app-development">Mobile App Development</option>
+                    <option value="web-hosting-domain-registration">Web Hosting & Domain Registration</option>
+                    <option value="training-internship">Training & Internship</option>
                   </select>
                 </div>
-              </div>
 
-              <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
-                  Approximate Budget
-                </label>
-                <select
-                  value={budget}
-                  onChange={(e) => setBudget(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none text-sm text-slate-800 bg-white transition-all"
-                >
-                  <option value="₹15,000 - ₹30,000 (Starter / Small Business)">₹15,000 - ₹30,000 (Starter / Small Business)</option>
-                  <option value="₹30,000 - ₹75,000 (Growth / Corporate Portal)">₹30,000 - ₹75,000 (Growth / Corporate Portal)</option>
-                  <option value="₹75,000 - ₹1,50,000 (Full-Stack / E-Commerce)">₹75,000 - ₹1,50,000 (Full-Stack / E-Commerce)</option>
-                  <option value="₹1,50,000+ (Enterprise Custom Application)">₹1,50,000+ (Enterprise Custom Application)</option>
-                </select>
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                    Approximate Budget
+                  </label>
+                  <select
+                    value={budget}
+                    onChange={(e) => setBudget(e.target.value)}
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none text-sm text-slate-800 bg-white transition-all font-medium text-slate-900"
+                  >
+                    <option value="Starting from ₹5,000 (Basic Setup / Starter Website)">Starting from ₹5,000 (Basic Setup / Starter Website)</option>
+                    <option value="₹5,000 - ₹15,000 (Small Business / Service Website)">₹5,000 - ₹15,000 (Small Business / Service Website)</option>
+                    <option value="₹15,000 - ₹30,000 (Corporate Business Portal)">₹15,000 - ₹30,000 (Corporate Business Portal)</option>
+                    <option value="₹30,000 - ₹75,000 (E-Commerce / Custom Web App)">₹30,000 - ₹75,000 (E-Commerce / Custom Web App)</option>
+                    <option value="₹75,000+ (Enterprise Custom Application)">₹75,000+ (Enterprise Custom Application)</option>
+                  </select>
+                </div>
               </div>
 
               <div>
@@ -260,7 +285,7 @@ ${message.trim() || 'Client requested initial consultation.'}
                   rows={3}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Tell us what you want to achieve, deadline, or references..."
+                  placeholder="Tell us about your business goals, required features, or references..."
                   className="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none text-sm text-slate-800 resize-none transition-all"
                 />
               </div>
@@ -291,5 +316,3 @@ ${message.trim() || 'Client requested initial consultation.'}
     </div>
   );
 };
-
-

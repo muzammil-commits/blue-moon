@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { 
-  Phone, Mail, MapPin, ChevronDown, Menu, X, ArrowRight,
+  Phone, Mail, ChevronDown, Menu, X, ArrowRight,
   Monitor, Code2, Search, Megaphone, Share2, PlaySquare,
   BadgePercent, Palette, Smartphone,
-  Server, GraduationCap, Facebook, Linkedin, Youtube
+  Server, GraduationCap, Facebook, Linkedin, Instagram
 } from 'lucide-react';
 import { COMPANY_INFO } from '../data/company';
 import { SERVICES_DATA } from '../data/services';
@@ -17,7 +17,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
-  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const location = useLocation();
 
@@ -33,7 +32,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
   useEffect(() => {
     setMobileMenuOpen(false);
     setServicesDropdownOpen(false);
-    setAboutDropdownOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [location.pathname]);
 
@@ -46,7 +44,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
     'ai-ad-creation': <PlaySquare className="w-4 h-4 text-violet-500" />,
     'google-ads-management': <BadgePercent className="w-4 h-4 text-amber-500" />,
     'graphic-designing': <Palette className="w-4 h-4 text-rose-500" />,
-    'google-business-profile-management': <MapPin className="w-4 h-4 text-sky-500" />,
+    'google-business-profile-management': <Share2 className="w-4 h-4 text-sky-500" />,
     'mobile-app-development': <Smartphone className="w-4 h-4 text-blue-700" />,
     'web-hosting-domain-registration': <Server className="w-4 h-4 text-teal-500" />,
     'training-internship': <GraduationCap className="w-4 h-4 text-purple-600" />
@@ -61,89 +59,83 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
     <header className="sticky top-0 z-50 w-full font-sans shadow-sm transition-all duration-300">
       
       {/* 
-        1. Top Contact Bar (image copy 24.png / image copy 25.png)
-        - Reduced size on desktop (sleek, slim py-1)
-        - Completely hidden on mobile (hidden md:block) per image copy 25.png instruction
+        1. Top Contact Bar
+        - Font size increased to text-xs sm:text-sm font-semibold
+        - Address removed as requested
+        - Facebook, Instagram, LinkedIn included
       */}
-      <div className="hidden md:block bg-[#102B8C] text-white text-[11px] xl:text-xs py-1 px-4 sm:px-8 border-b border-blue-900/40">
-        <div className="max-w-7xl mx-auto flex justify-between items-center gap-2">
-          {/* Contact Details */}
-          <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-slate-200">
+      <div className="hidden md:block bg-[#102B8C] text-white py-1.5 px-4 sm:px-8 border-b border-blue-900/40">
+        <div className="max-w-7xl mx-auto flex justify-between items-center gap-4">
+          {/* Contact Details with Increased Font Size */}
+          <div className="flex items-center gap-6 text-white text-xs sm:text-sm font-semibold">
             <a 
               href={`tel:${COMPANY_INFO.phoneClean}`} 
-              className="flex items-center gap-1.5 hover:text-white transition-colors group"
+              className="flex items-center gap-2 hover:text-blue-200 transition-colors group"
             >
-              <div className="w-4 h-4 rounded-full bg-blue-700/60 flex items-center justify-center group-hover:bg-blue-600 transition-colors">
-                <Phone className="w-2.5 h-2.5 text-blue-200 group-hover:text-white" />
+              <div className="w-5 h-5 rounded-full bg-blue-700/80 flex items-center justify-center group-hover:bg-blue-600 transition-colors">
+                <Phone className="w-3 h-3 text-white" />
               </div>
-              <span className="font-semibold tracking-wide">{COMPANY_INFO.phone}</span>
+              <span className="tracking-wide">{COMPANY_INFO.phone}</span>
             </a>
 
-            <span className="text-blue-400/40">|</span>
+            <span className="text-blue-300/40">|</span>
 
             <a 
               href={`mailto:${COMPANY_INFO.email}`} 
-              className="flex items-center gap-1.5 hover:text-white transition-colors group"
+              className="flex items-center gap-2 hover:text-blue-200 transition-colors group"
             >
-              <div className="w-4 h-4 rounded-full bg-blue-700/60 flex items-center justify-center group-hover:bg-blue-600 transition-colors">
-                <Mail className="w-2.5 h-2.5 text-blue-200 group-hover:text-white" />
+              <div className="w-5 h-5 rounded-full bg-blue-700/80 flex items-center justify-center group-hover:bg-blue-600 transition-colors">
+                <Mail className="w-3 h-3 text-white" />
               </div>
-              <span className="truncate">{COMPANY_INFO.email}</span>
+              <span className="tracking-wide">{COMPANY_INFO.email}</span>
             </a>
-
-            <span className="hidden lg:inline text-blue-400/40">|</span>
-
-            <div className="hidden lg:flex items-center gap-1.5 text-slate-300">
-              <MapPin className="w-3 h-3 text-blue-300 flex-shrink-0" />
-              <span className="truncate max-w-[360px] xl:max-w-[440px]">{COMPANY_INFO.address.full}</span>
-            </div>
           </div>
 
-          {/* Social Icons */}
-          <div className="flex items-center gap-2">
+          {/* Social Icons: Facebook, Instagram, LinkedIn */}
+          <div className="flex items-center gap-2.5">
             <a 
               href={COMPANY_INFO.social.facebook} 
               target="_blank" 
               rel="noreferrer" 
-              className="w-5 h-5 rounded-full bg-blue-800/80 hover:bg-blue-600 flex items-center justify-center transition-all hover:scale-110"
+              className="w-6 h-6 rounded-full bg-blue-800/90 hover:bg-blue-500 flex items-center justify-center transition-all hover:scale-110 shadow-sm"
               aria-label="Facebook"
             >
-              <Facebook className="w-2.5 h-2.5 text-white" />
+              <Facebook className="w-3.5 h-3.5 text-white" />
+            </a>
+            <a 
+              href={COMPANY_INFO.social.instagram} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="w-6 h-6 rounded-full bg-blue-800/90 hover:bg-pink-600 flex items-center justify-center transition-all hover:scale-110 shadow-sm"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-3.5 h-3.5 text-white" />
             </a>
             <a 
               href={COMPANY_INFO.social.linkedin} 
               target="_blank" 
               rel="noreferrer" 
-              className="w-5 h-5 rounded-full bg-blue-800/80 hover:bg-blue-600 flex items-center justify-center transition-all hover:scale-110"
+              className="w-6 h-6 rounded-full bg-blue-800/90 hover:bg-blue-500 flex items-center justify-center transition-all hover:scale-110 shadow-sm"
               aria-label="LinkedIn"
             >
-              <Linkedin className="w-2.5 h-2.5 text-white" />
-            </a>
-            <a 
-              href={COMPANY_INFO.social.youtube} 
-              target="_blank" 
-              rel="noreferrer" 
-              className="w-5 h-5 rounded-full bg-blue-800/80 hover:bg-blue-600 flex items-center justify-center transition-all hover:scale-110"
-              aria-label="YouTube"
-            >
-              <Youtube className="w-2.5 h-2.5 text-white" />
+              <Linkedin className="w-3.5 h-3.5 text-white" />
             </a>
           </div>
         </div>
       </div>
 
-      {/* 2. Main Navigation Bar with Official Logo (image copy 23.png) */}
+      {/* 2. Main Navigation Bar with Nav Padding - 0 & Logo Height 4 to 5 rem */}
       <nav className={`bg-white transition-all duration-300 border-b border-slate-100 ${
-        isScrolled ? 'py-2 shadow-md' : 'py-2.5 sm:py-3'
+        isScrolled ? 'py-0 shadow-md' : 'py-0 sm:py-0.5'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between">
           
-          {/* Official High-Resolution Transparent Logo (image copy 23.png) */}
-          <Link to="/" className="flex items-center group focus:outline-none py-1">
+          {/* Official High-Resolution Transparent Logo (Height 4 to 5rem / h-16 to h-20) */}
+          <Link to="/" className="flex items-center group focus:outline-none py-0">
             <img 
               src="/assets/logo-light.png" 
               alt="BlueMoon Software Solutions" 
-              className="h-12 sm:h-14 md:h-16 lg:h-18 max-w-[240px] sm:max-w-[280px] md:max-w-[340px] w-auto object-contain transition-transform group-hover:scale-105 filter drop-shadow-sm"
+              className="h-16 sm:h-18 md:h-20 max-w-[280px] sm:max-w-[340px] md:max-w-[400px] w-auto object-contain transition-transform group-hover:scale-102 filter drop-shadow-sm"
               onError={(e) => {
                 const target = e.currentTarget;
                 target.style.display = 'none';
@@ -175,51 +167,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
               Home
             </Link>
 
-            {/* About Dropdown */}
-            <div 
-              className="relative"
-              onMouseEnter={() => setAboutDropdownOpen(true)}
-              onMouseLeave={() => setAboutDropdownOpen(false)}
+            {/* About Us is Single Menu Link (Dropdown removed as requested) */}
+            <Link
+              to="/about"
+              className={`px-3.5 py-1.5 rounded-full text-sm font-semibold transition-all ${
+                isActive('/about')
+                  ? 'bg-[#0866F5] text-white shadow-sm'
+                  : 'text-slate-700 hover:text-[#0866F5] hover:bg-blue-50/60'
+              }`}
             >
-              <button
-                className={`flex items-center gap-1 px-3.5 py-1.5 rounded-full text-sm font-semibold transition-all ${
-                  isActive('/about')
-                    ? 'text-[#0866F5] bg-blue-50/80'
-                    : 'text-slate-700 hover:text-[#0866F5] hover:bg-blue-50/60'
-                }`}
-              >
-                <span>About Us</span>
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${aboutDropdownOpen ? 'rotate-180 text-blue-600' : ''}`} />
-              </button>
+              About Us
+            </Link>
 
-              {aboutDropdownOpen && (
-                <div className="absolute top-full left-0 w-64 bg-white rounded-2xl shadow-xl border border-slate-100 p-2 py-3 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
-                  <Link 
-                    to="/about" 
-                    className="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-blue-50/80 transition-colors"
-                  >
-                    <span className="text-sm font-bold text-slate-800">Company Overview</span>
-                    <span className="text-xs text-slate-500">12+ years of digital excellence</span>
-                  </Link>
-                  <Link 
-                    to="/about#vision" 
-                    className="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-blue-50/80 transition-colors"
-                  >
-                    <span className="text-sm font-bold text-slate-800">Vision & Mission</span>
-                    <span className="text-xs text-slate-500">Our roadmap and corporate purpose</span>
-                  </Link>
-                  <Link 
-                    to="/about#values" 
-                    className="flex flex-col px-3.5 py-2.5 rounded-xl hover:bg-blue-50/80 transition-colors"
-                  >
-                    <span className="text-sm font-bold text-slate-800">Core Values</span>
-                    <span className="text-xs text-slate-500">Integrity, innovation, and client success</span>
-                  </Link>
-                </div>
-              )}
-            </div>
-
-            {/* Services Mega Dropdown */}
+            {/* Services Dropdown */}
             <div 
               className="relative"
               onMouseEnter={() => setServicesDropdownOpen(true)}
@@ -237,38 +197,38 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
               </button>
 
               {servicesDropdownOpen && (
-                <div className="absolute top-full -left-20 w-[680px] bg-white rounded-3xl shadow-2xl border border-slate-100 p-6 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
-                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[720px] bg-white rounded-3xl shadow-2xl border border-slate-100 p-6 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+                  <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
                     <div>
-                      <h4 className="text-sm font-bold text-slate-900">Comprehensive Digital Solutions</h4>
+                      <h4 className="font-extrabold text-slate-900 text-sm">Comprehensive Services</h4>
                       <p className="text-xs text-slate-500">12+ expert services to build and scale your business</p>
                     </div>
                     <Link 
                       to="/services" 
-                      className="text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1 group"
+                      className="text-xs font-bold text-blue-600 hover:underline flex items-center gap-1"
                     >
                       <span>View All Services</span>
-                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      <span>→</span>
                     </Link>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-2 max-h-[380px] overflow-y-auto pr-1">
+                  <div className="grid grid-cols-2 gap-2">
                     {SERVICES_DATA.map((srv) => (
                       <Link
                         key={srv.id}
                         to={`/services/${srv.slug}`}
-                        className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-blue-50/70 transition-all group"
+                        className="flex items-start gap-3 p-2.5 rounded-2xl hover:bg-blue-50/70 transition-all group"
                       >
-                        <div className="w-8 h-8 rounded-lg bg-slate-50 group-hover:bg-white flex items-center justify-center flex-shrink-0 shadow-sm border border-slate-100 group-hover:border-blue-200 transition-colors">
-                          {serviceIconMap[srv.slug] || <Monitor className="w-4 h-4 text-blue-600" />}
+                        <div className="w-8 h-8 rounded-xl bg-slate-50 group-hover:bg-white flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm group-hover:scale-105 transition-all">
+                          {serviceIconMap[srv.slug] || <Monitor className="w-4 h-4 text-blue-500" />}
                         </div>
-                        <div className="min-w-0">
-                          <div className="text-xs font-bold text-slate-800 group-hover:text-blue-600 truncate transition-colors">
+                        <div className="flex flex-col min-w-0">
+                          <span className="text-xs font-bold text-slate-800 group-hover:text-blue-600 transition-colors truncate">
                             {srv.title}
-                          </div>
-                          <div className="text-[11px] text-slate-500 line-clamp-1 leading-snug">
+                          </span>
+                          <span className="text-[11px] text-slate-500 line-clamp-1">
                             {srv.shortDesc}
-                          </div>
+                          </span>
                         </div>
                       </Link>
                     ))}
@@ -297,17 +257,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
               }`}
             >
               Testimonials
-            </Link>
-
-            <Link
-              to="/blog"
-              className={`px-3.5 py-1.5 rounded-full text-sm font-semibold transition-all ${
-                isActive('/blog')
-                  ? 'text-[#0866F5] bg-blue-50/80'
-                  : 'text-slate-700 hover:text-[#0866F5] hover:bg-blue-50/60'
-              }`}
-            >
-              Blog
             </Link>
 
             <Link
@@ -354,7 +303,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
                 <img 
                   src="/assets/logo-light.png" 
                   alt="BlueMoon Software Solutions" 
-                  className="h-11 sm:h-12 w-auto object-contain"
+                  className="h-14 sm:h-16 w-auto object-contain"
                 />
               </Link>
               <span className="text-[10px] font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full uppercase">
@@ -434,15 +383,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
               </Link>
 
               <Link
-                to="/blog"
-                className={`px-4 py-2.5 rounded-xl text-base font-semibold ${
-                  isActive('/blog') ? 'bg-blue-50 text-blue-600' : 'text-slate-800 hover:bg-blue-50'
-                }`}
-              >
-                Blog
-              </Link>
-
-              <Link
                 to="/contact"
                 className={`px-4 py-2.5 rounded-xl text-base font-semibold ${
                   isActive('/contact') ? 'bg-blue-50 text-blue-600' : 'text-slate-800 hover:bg-blue-50'
@@ -452,25 +392,26 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
               </Link>
             </div>
 
-            <div className="pt-4 border-t border-slate-100 flex flex-col gap-3">
+            {/* Mobile Contact Quick Actions */}
+            <div className="pt-4 border-t border-slate-100 space-y-3">
+              <a
+                href={`tel:${COMPANY_INFO.phoneClean}`}
+                className="w-full py-3 px-4 rounded-xl bg-blue-50 text-blue-600 font-bold text-sm flex items-center justify-center gap-2"
+              >
+                <Phone className="w-4 h-4" />
+                <span>Call {COMPANY_INFO.phone}</span>
+              </a>
+
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenQuote();
                 }}
-                className="w-full py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-center shadow-md active:scale-98 transition-all flex items-center justify-center gap-2"
+                className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-[#0866F5] to-[#7936F2] text-white font-bold text-sm shadow-md flex items-center justify-center gap-2"
               >
-                <span>Get a Quote</span>
+                <span>Request a Quote</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
-
-              <a
-                href={`tel:${COMPANY_INFO.phoneClean}`}
-                className="w-full py-2.5 rounded-full border border-blue-200 text-blue-600 font-bold text-sm text-center hover:bg-blue-50 flex items-center justify-center gap-2"
-              >
-                <Phone className="w-4 h-4" />
-                <span>Call {COMPANY_INFO.phone}</span>
-              </a>
             </div>
           </div>
         )}

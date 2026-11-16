@@ -16,14 +16,14 @@ export const MidStatsBanner: React.FC<MidStatsBannerProps> = ({ onGetStarted }) 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-6 items-center">
           
-          {/* Stat 1: 12+ Years Experience */}
+          {/* Stat 1: 5+ Years Experience */}
           <div className="flex items-center gap-4 group">
             <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/15 backdrop-blur-md flex items-center justify-center flex-shrink-0 border border-white/30 shadow-lg group-hover:scale-110 transition-transform">
               <Trophy className="w-7 h-7 sm:w-8 sm:h-8 text-yellow-300" />
             </div>
             <div>
               <div className="text-3xl sm:text-4xl lg:text-5xl font-black leading-none tracking-tight">
-                <CountUp end={12} suffix="+" duration={1600} />
+                <CountUp end={5} suffix="+" duration={1600} />
               </div>
               <div className="text-xs sm:text-sm text-blue-100 font-extrabold mt-1.5 uppercase tracking-wide">
                 Years Experience
@@ -31,14 +31,14 @@ export const MidStatsBanner: React.FC<MidStatsBannerProps> = ({ onGetStarted }) 
             </div>
           </div>
 
-          {/* Stat 2: 325+ Projects Delivered */}
+          {/* Stat 2: 100+ Projects Delivered */}
           <div className="flex items-center gap-4 group">
             <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/15 backdrop-blur-md flex items-center justify-center flex-shrink-0 border border-white/30 shadow-lg group-hover:scale-110 transition-transform">
               <Box className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-300" />
             </div>
             <div>
               <div className="text-3xl sm:text-4xl lg:text-5xl font-black leading-none tracking-tight">
-                <CountUp end={325} suffix="+" duration={2000} />
+                <CountUp end={100} suffix="+" duration={2000} />
               </div>
               <div className="text-xs sm:text-sm text-blue-100 font-extrabold mt-1.5 uppercase tracking-wide">
                 Projects Delivered

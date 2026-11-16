@@ -51,8 +51,8 @@ export const AboutSection: React.FC = () => {
               {/* Key Bullet Checklist */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                 {[
-                  '12+ Years of Industry Experience',
-                  '325+ Completed Projects',
+                  '5+ Years of Industry Experience',
+                  '100+ Completed Projects',
                   'Customized Digital Solutions',
                   'Responsive & SEO-Friendly Websites',
                   'Enterprise-Grade Cloud Infrastructure',

@@ -132,10 +132,10 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish, minDuratio
         <div className="pt-4 flex items-center gap-4 text-xs text-slate-400">
           <div className="flex items-center gap-1">
             <ShieldCheck className="w-3.5 h-3.5 text-blue-400" />
-            <span>12+ Years of Excellence</span>
+            <span>5+ Years of Excellence</span>
           </div>
           <span>•</span>
-          <span>325+ Projects Worldwide</span>
+          <span>100+ Projects Worldwide</span>
         </div>
 
       </div>

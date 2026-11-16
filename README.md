@@ -28,7 +28,7 @@ A complete, production-ready, multi-page business website designed and built for
   12. `/services/training-internship` - Training & Internship
 - **Full Navigation & Multi-Page Architecture**:
   - `/` (Home)
-  - `/about` (About Us with Vision, Mission, Core Values, 12+ years journey)
+  - `/about` (About Us with Vision, Mission, Core Values, 5+ years journey)
   - `/services` (Comprehensive services catalog)
   - `/portfolio` (Interactive portfolio with category filter pills)
   - `/testimonials` (Real client reviews & trust badges)

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
@@ -72,11 +72,11 @@ export const App: React.FC = () => {
             />
             <Route 
               path="/blog" 
-              element={<BlogIndexPage />} 
+              element={<Navigate to="/" replace />} 
             />
             <Route 
               path="/blog/:slug" 
-              element={<BlogPostPage onOpenQuote={() => setIsQuoteOpen(true)} />} 
+              element={<Navigate to="/" replace />} 
             />
             <Route 
               path="/contact" 

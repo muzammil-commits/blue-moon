@@ -12,7 +12,7 @@ export const HomeFaqSection: React.FC<HomeFaqSectionProps> = ({ onOpenQuote }) =
   const faqs = [
     {
       q: 'Why should I choose BlueMoon Software Solutions for my business?',
-      a: 'With 12+ years of hands-on industry experience and 325+ completed projects worldwide, BlueMoon provides complete digital services under one roof: modern website designing, custom software development, SEO, AI ad creation, and Google Ads management.'
+      a: 'With 5+ years of hands-on industry experience and 100+ completed projects worldwide, BlueMoon provides complete digital services under one roof: modern website designing, custom software development, SEO, AI ad creation, and Google Ads management.'
     },
     {
       q: 'Do you create mobile-responsive websites that rank on Google?',

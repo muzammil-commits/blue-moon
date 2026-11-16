@@ -62,11 +62,11 @@ export const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose }) => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-slate-800/80 mt-6 text-xs text-slate-300">
           <div className="flex items-center gap-2">
             <CheckCircle className="w-4 h-4 text-blue-400 flex-shrink-0" />
-            <span>12+ Years Innovation</span>
+            <span>5+ Years Innovation</span>
           </div>
           <div className="flex items-center gap-2">
             <CheckCircle className="w-4 h-4 text-indigo-400 flex-shrink-0" />
-            <span>325+ Projects Delivered</span>
+            <span>100+ Projects Delivered</span>
           </div>
           <div className="flex items-center gap-2">
             <CheckCircle className="w-4 h-4 text-purple-400 flex-shrink-0" />

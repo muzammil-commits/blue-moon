@@ -90,7 +90,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onExploreService
             </div>
             <div className="flex items-center gap-1.5 text-slate-900 drop-shadow-sm font-extrabold">
               <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-              <span>Trusted by 325+ Companies Worldwide</span>
+              <span>Trusted by 100+ Companies Worldwide</span>
             </div>
           </div>
 

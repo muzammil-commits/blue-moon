@@ -82,7 +82,7 @@ export const TestimonialsPage: React.FC<TestimonialsPageProps> = ({ onOpenQuote 
 
           {/* 
             3. Trust Metrics in Counting Mode (image copy 21.png)
-            Smooth interactive count-up numbers for 100%, 325+, 12+, 24/7
+            Smooth interactive count-up numbers for 100%, 100+, 5+, 24/7
           */}
           <div className="mt-16 bg-[#102B8C] text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-2xl pointer-events-none" />
@@ -96,13 +96,13 @@ export const TestimonialsPage: React.FC<TestimonialsPageProps> = ({ onOpenQuote 
               </div>
               <div className="pt-4 md:pt-0">
                 <div className="text-3xl sm:text-4xl md:text-5xl font-black text-white">
-                  <CountUp end={325} suffix="+" duration={2000} />
+                  <CountUp end={100} suffix="+" duration={2000} />
                 </div>
                 <div className="text-xs sm:text-sm text-blue-200 mt-1.5 font-bold">Projects Delivered</div>
               </div>
               <div className="pt-4 md:pt-0">
                 <div className="text-3xl sm:text-4xl md:text-5xl font-black text-white">
-                  <CountUp end={12} suffix="+" duration={1600} />
+                  <CountUp end={5} suffix="+" duration={1600} />
                 </div>
                 <div className="text-xs sm:text-sm text-blue-200 mt-1.5 font-bold">Years of Experience</div>
               </div>
